@@ -121,19 +121,19 @@ export default function Home() {
       id: 1,
       title: "Enterprise Cloud Migration",
       category: "Cloud Solutions",
-      image: "368.jpg",
+      image: "/case-study-1.jpg",
     },
     {
       id: 2,
       title: "Financial Services Platform",
       category: "Software Development",
-      image: "/2128.jpg",
+      image: "/case-study-2.jpg",
     },
     {
       id: 3,
       title: "Healthcare Data Analytics",
       category: "Data Analytics",
-      image: "/707.jpg",
+      image: "/case-study-3.jpg",
     },
   ]
 
@@ -326,10 +326,10 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4">
                 <Users className="h-12 w-12 text-primary-500" />
                 <div className="text-center">
-                  <h3 className="text-4xl font-bold">
+                  <h3 className="text-4xl font-bold text-white">
                     <AnimatedCounter value={100} suffix="+" />
                   </h3>
-                  <p className="text-gray-400">Clients Worldwide</p>
+                  <p className="text-white">Clients Worldwide</p>
                 </div>
               </div>
             </AnimatedCard>
@@ -338,10 +338,10 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4">
                 <Award className="h-12 w-12 text-primary-500" />
                 <div className="text-center">
-                  <h3 className="text-4xl font-bold">
+                  <h3 className="text-4xl font-bold text-white">
                     <AnimatedCounter value={250} suffix="+" />
                   </h3>
-                  <p className="text-gray-400">Projects Completed</p>
+                  <p className="text-white">Projects Completed</p>
                 </div>
               </div>
             </AnimatedCard>
@@ -350,10 +350,10 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center space-y-4">
                 <Globe className="h-12 w-12 text-primary-500" />
                 <div className="text-center">
-                  <h3 className="text-4xl font-bold">
+                  <h3 className="text-4xl font-bold text-white">
                     <AnimatedCounter value={15} suffix="+" />
                   </h3>
-                  <p className="text-gray-400">Countries Served</p>
+                  <p className="text-white">Countries Served</p>
                 </div>
               </div>
             </AnimatedCard>
