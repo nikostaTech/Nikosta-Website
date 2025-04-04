@@ -9,7 +9,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center">
-              <Image src="/BrandLogo.png" alt="Nikosta" width={120} height={40} className="h-10 w-auto" />
+              <Image src="/Logoico.png" alt="Nikosta" width={120} height={40} className="h-10 w-auto" />
             </Link>
             <p className="text-sm text-gray-400">
               Delivering innovative technology solutions that drive business growth and digital transformation.

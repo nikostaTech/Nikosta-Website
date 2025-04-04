@@ -38,7 +38,7 @@ export function SiteHeader() {
       <div className="container flex h-20 items-center px-4 sm:px-6">
         <div className="flex items-center justify-between w-full">
           <Link href="/" className="flex items-center">
-            <Image src="/BrandLogo.png" alt="Nikosta" width={120} height={40} className="h-10 w-auto" />
+            <Image src="/Logoico.png" alt="Nikosta" width={120} height={40} className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

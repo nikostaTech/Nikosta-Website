@@ -164,8 +164,12 @@ export default function Home() {
                   </GlowingButton>
                 </Link>
                 <Link href="/contact">
-                  <Button variant="outline" className="border-gray-700 text-white hover:bg-gray-800 px-8 py-6 text-lg">
+                  <Button
+                    variant="outline"
+                    className="border-gray-700 bg-transparent text-white hover:bg-gray-800 hover:text-white px-8 py-6 text-lg"
+                  >
                     Contact Us
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
               </div>
