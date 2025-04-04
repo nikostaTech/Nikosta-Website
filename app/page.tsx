@@ -327,7 +327,7 @@ export default function Home() {
                 <Users className="h-12 w-12 text-primary-500" />
                 <div className="text-center">
                   <h3 className="text-4xl font-bold text-white">
-                    <AnimatedCounter value={100} suffix="+" />
+                    <AnimatedCounter value={20} suffix="+" />
                   </h3>
                   <p className="text-white">Clients Worldwide</p>
                 </div>
@@ -339,7 +339,7 @@ export default function Home() {
                 <Award className="h-12 w-12 text-primary-500" />
                 <div className="text-center">
                   <h3 className="text-4xl font-bold text-white">
-                    <AnimatedCounter value={250} suffix="+" />
+                    <AnimatedCounter value={20} suffix="+" />
                   </h3>
                   <p className="text-white">Projects Completed</p>
                 </div>
@@ -351,7 +351,7 @@ export default function Home() {
                 <Globe className="h-12 w-12 text-primary-500" />
                 <div className="text-center">
                   <h3 className="text-4xl font-bold text-white">
-                    <AnimatedCounter value={15} suffix="+" />
+                    <AnimatedCounter value={5} suffix="+" />
                   </h3>
                   <p className="text-white">Countries Served</p>
                 </div>
