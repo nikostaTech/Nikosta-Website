@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 export default function AboutPage() {
   const team = [
     {
-      name: "John Smith",
+      name: "Ashmit Raj",
       position: "CEO & Founder",
       bio: "With over 20 years of experience in enterprise technology, John leads our team with vision and expertise.",
       image: "/placeholder.svg?height=400&width=400&text=John",

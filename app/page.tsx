@@ -115,6 +115,28 @@ export default function Home() {
     },
   ]
 
+  // Case study data with different images and titles
+  const caseStudies = [
+    {
+      id: 1,
+      title: "Enterprise Cloud Migration",
+      category: "Cloud Solutions",
+      image: "368.jpg",
+    },
+    {
+      id: 2,
+      title: "Financial Services Platform",
+      category: "Software Development",
+      image: "/2128.jpg",
+    },
+    {
+      id: 3,
+      title: "Healthcare Data Analytics",
+      category: "Data Analytics",
+      image: "/707.jpg",
+    },
+  ]
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -375,16 +397,16 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((project) => (
+            {caseStudies.map((study) => (
               <Link
-                href={`/portfolio/${project}`}
-                key={project}
+                href={`/portfolio/${study.id}`}
+                key={study.id}
                 className="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
               >
                 <div className="aspect-video overflow-hidden">
                   <Image
-                    src={`/placeholder.svg?height=400&width=600&text=Case+Study+${project}`}
-                    alt={`Case Study ${project}`}
+                    src={study.image || "/placeholder.svg"}
+                    alt={study.title}
                     width={600}
                     height={400}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -392,8 +414,8 @@ export default function Home() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 transition-all duration-300 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100">
-                  <h3 className="text-xl font-bold">Case Study {project}</h3>
-                  <p className="text-sm text-gray-300 mt-2">Enterprise Solutions</p>
+                  <h3 className="text-xl font-bold">{study.title}</h3>
+                  <p className="text-sm text-gray-300 mt-2">{study.category}</p>
                   <div className="mt-4 flex items-center text-primary-400 font-medium">
                     View Case Study
                     <ArrowRight className="ml-2 h-4 w-4" />

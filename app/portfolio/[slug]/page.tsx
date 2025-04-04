@@ -22,9 +22,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       "The new platform resulted in a 40% increase in online sales and a 25% reduction in cart abandonment rate. The client also reported a significant improvement in customer satisfaction and engagement.",
     technologies: ["Next.js", "React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
     images: [
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
-      "/placeholder.svg?height=600&width=800",
+      "/2128.jpg?height=600&width=800",
+      "/707.jpg?height=600&width=800",
+      "/368.jpg?height=600&width=800",
     ],
   }
 
