@@ -2,11 +2,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Award, Globe, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { OurStorySection } from "@/components/our-story-section"
 
 export default function AboutPage() {
   const team = [
     {
-      name: "Ashmit Raj",
+      name: "John Smith",
       position: "CEO & Founder",
       bio: "With over 20 years of experience in enterprise technology, John leads our team with vision and expertise.",
       image: "/placeholder.svg?height=400&width=400&text=John",
@@ -48,7 +49,7 @@ export default function AboutPage() {
             <div className="flex items-center justify-center">
               <div className="relative h-[350px] w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/placeholder.svg?height=700&width=700&text=About+Us"
+                  src="/aboutnic.jpg?height=700&width=700&text=About+Us"
                   alt="About Nikosta"
                   fill
                   className="object-cover"
@@ -60,34 +61,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto max-w-3xl space-y-8">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter">Our Story</h2>
-            </div>
-            <div className="space-y-4 text-gray-500">
-              <p>
-                Founded in 2015, Nikosta began with a simple mission: to help businesses leverage the power of
-                technology to innovate and grow. What started as a small team of passionate technologists has grown into
-                a full-service technology company with expertise across software development, cloud solutions, data
-                analytics, and cybersecurity.
-              </p>
-              <p>
-                Over the years, we've had the privilege of working with clients across various industries, from startups
-                to Fortune 500 companies. Each project has contributed to our growth and expertise, allowing us to
-                refine our processes and expand our capabilities.
-              </p>
-              <p>
-                Today, Nikosta is recognized for delivering innovative technology solutions that drive business results.
-                Our team combines deep technical expertise with business acumen to create solutions that not only solve
-                technical challenges but also deliver measurable business value.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Our Story Section */}
+      <OurStorySection />
 
       {/* Our Values */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
@@ -149,21 +124,21 @@ export default function AboutPage() {
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">
               <Users className="h-12 w-12 text-white" />
               <div className="text-center">
-                <h3 className="text-3xl font-bold">100+</h3>
+                <h3 className="text-3xl font-bold">10+</h3>
                 <p className="text-gray-400">Clients Worldwide</p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">
               <Award className="h-12 w-12 text-white" />
               <div className="text-center">
-                <h3 className="text-3xl font-bold">250+</h3>
+                <h3 className="text-3xl font-bold">30+</h3>
                 <p className="text-gray-400">Projects Completed</p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">
               <Globe className="h-12 w-12 text-white" />
               <div className="text-center">
-                <h3 className="text-3xl font-bold">15+</h3>
+                <h3 className="text-3xl font-bold">2+</h3>
                 <p className="text-gray-400">Countries Served</p>
               </div>
             </div>
@@ -186,7 +161,7 @@ export default function AboutPage() {
             {team.map((member, index) => (
               <div key={index} className="flex flex-col items-center space-y-4">
                 <div className="relative h-40 w-40 overflow-hidden rounded-full">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  <Image src={member.image || "/2128.jpg"} alt={member.name} fill className="object-cover" />
                 </div>
                 <div className="text-center">
                   <h3 className="text-xl font-bold">{member.name}</h3>
