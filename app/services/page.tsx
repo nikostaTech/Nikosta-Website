@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, Code, Database, Server, Shield } from "lucide-react"
+import { ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function ServicesPage() {
@@ -17,7 +17,6 @@ export default function ServicesPage() {
         "DevOps and CI/CD implementation",
         "Microservices architecture",
       ],
-      icon: <Code className="h-10 w-10 text-black" />,
       image: "/placeholder.svg?height=600&width=600&text=Software+Development",
     },
     {
@@ -32,7 +31,6 @@ export default function ServicesPage() {
         "Cloud cost optimization",
         "Managed cloud services",
       ],
-      icon: <Server className="h-10 w-10 text-black" />,
       image: "/placeholder.svg?height=600&width=600&text=Cloud+Solutions",
     },
     {
@@ -47,7 +45,6 @@ export default function ServicesPage() {
         "Machine learning integration",
         "Real-time analytics dashboards",
       ],
-      icon: <Database className="h-10 w-10 text-black" />,
       image: "/placeholder.svg?height=600&width=600&text=Data+Analytics",
     },
     {
@@ -62,7 +59,6 @@ export default function ServicesPage() {
         "Security operations center",
         "Incident response planning",
       ],
-      icon: <Shield className="h-10 w-10 text-black" />,
       image: "/placeholder.svg?height=600&width=600&text=Cybersecurity",
     },
   ]
@@ -100,7 +96,72 @@ export default function ServicesPage() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <div className="inline-flex items-center space-x-2 rounded-lg bg-gray-100 px-3 py-1">
-                    <div className="h-5 w-5">{service.icon}</div>
+                    <div className="h-5 w-5">
+                      {/* Static SVG icons based on service type */}
+                      {service.id === "software-development" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="16 18 22 12 16 6"></polyline>
+                          <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                      )}
+                      {service.id === "cloud-solutions" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                        </svg>
+                      )}
+                      {service.id === "data-analytics" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                      )}
+                      {service.id === "cybersecurity" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                      )}
+                    </div>
                     <span className="text-sm font-medium">Solution</span>
                   </div>
                   <h2 className="text-3xl font-bold tracking-tighter">{service.title}</h2>

@@ -121,19 +121,19 @@ export default function Home() {
       id: 1,
       title: "Enterprise Cloud Migration",
       category: "Cloud Solutions",
-      image: "/case-study-1.jpg",
+      image: "/cloud.jpg",
     },
     {
       id: 2,
       title: "Financial Services Platform",
       category: "Software Development",
-      image: "/case-study-2.jpg",
+      image: "/finance.jpg",
     },
     {
       id: 3,
       title: "Healthcare Data Analytics",
       category: "Data Analytics",
-      image: "/case-study-3.jpg",
+      image: "/health.jpg",
     },
   ]
 

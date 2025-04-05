@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function PortfolioPage() {
-  // Sample case studies
+  // Sample case studies with unique images for each
   const projects = [
     {
       id: 1,
@@ -12,6 +12,7 @@ export default function PortfolioPage() {
       category: "Cloud Solutions",
       description:
         "Migrated a large enterprise from legacy infrastructure to a scalable cloud architecture, reducing operational costs by 40%.",
+      image: "/cloud.jpg",
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ export default function PortfolioPage() {
       category: "Software Development",
       description:
         "Developed a secure, compliant financial services platform with real-time transaction processing and analytics.",
+      image: "/finance.jpg",
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ export default function PortfolioPage() {
       category: "Data Analytics",
       description:
         "Implemented a comprehensive data analytics solution for a healthcare provider, improving patient outcomes and operational efficiency.",
+      image: "/dataanalytics.jpg",
     },
     {
       id: 4,
@@ -33,6 +36,7 @@ export default function PortfolioPage() {
       category: "Cybersecurity",
       description:
         "Strengthened the security posture of a major retail chain, protecting customer data and preventing potential breaches.",
+      image: "/cyber.jpg",
     },
     {
       id: 5,
@@ -40,6 +44,7 @@ export default function PortfolioPage() {
       category: "IoT & Edge Computing",
       description:
         "Designed and implemented an IoT solution for a manufacturing company, enabling real-time monitoring and predictive maintenance.",
+      image: "/iot.jpg",
     },
     {
       id: 6,
@@ -47,6 +52,7 @@ export default function PortfolioPage() {
       category: "Digital Transformation",
       description:
         "Modernized a government agency's citizen services portal, improving accessibility and user experience while ensuring security.",
+      image: "/digi.jpg",
     },
   ]
 
@@ -78,7 +84,7 @@ export default function PortfolioPage() {
               >
                 <div className="aspect-video overflow-hidden">
                   <Image
-                    src={`/placeholder.svg?height=400&width=600&text=Case+Study+${project.id}`}
+                    src={project.image || `/placeholder.svg?height=400&width=600&text=Case+Study+${project.id}`}
                     alt={project.title}
                     width={600}
                     height={400}
