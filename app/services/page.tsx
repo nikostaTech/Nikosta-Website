@@ -17,7 +17,7 @@ export default function ServicesPage() {
         "DevOps and CI/CD implementation",
         "Microservices architecture",
       ],
-      image: "/placeholder.svg?height=600&width=600&text=Software+Development",
+      image: "/soft.jpg?height=600&width=600&text=Software+Development",
     },
     {
       id: "cloud-solutions",
@@ -31,7 +31,7 @@ export default function ServicesPage() {
         "Cloud cost optimization",
         "Managed cloud services",
       ],
-      image: "/placeholder.svg?height=600&width=600&text=Cloud+Solutions",
+      image: "/cloud.jpg?height=600&width=600&text=Cloud+Solutions",
     },
     {
       id: "data-analytics",
@@ -45,7 +45,7 @@ export default function ServicesPage() {
         "Machine learning integration",
         "Real-time analytics dashboards",
       ],
-      image: "/placeholder.svg?height=600&width=600&text=Data+Analytics",
+      image: "/dataanalytics.jpg?height=600&width=600&text=Data+Analytics",
     },
     {
       id: "cybersecurity",
@@ -59,7 +59,7 @@ export default function ServicesPage() {
         "Security operations center",
         "Incident response planning",
       ],
-      image: "/placeholder.svg?height=600&width=600&text=Cybersecurity",
+      image: "/cyber.jpg?height=600&width=600&text=Cybersecurity",
     },
   ]
 

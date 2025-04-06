@@ -7,28 +7,40 @@ import { OurStorySection } from "@/components/our-story-section"
 export default function AboutPage() {
   const team = [
     {
-      name: "John Smith",
-      position: "CEO & Founder",
-      bio: "With over 20 years of experience in enterprise technology, John leads our team with vision and expertise.",
-      image: "/placeholder.svg?height=400&width=400&text=John",
+      name: "Ashish Raj",
+      position: "Software Devloper",
+      bio: "With over 2 years of experience in enterprise technology, John leads our team with vision and expertise.",
+      image: "/ashu.png?height=400&width=400&text=John",
     },
     {
-      name: "Sarah Johnson",
-      position: "CTO",
-      bio: "Sarah brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
-      image: "/placeholder.svg?height=400&width=400&text=Sarah",
+      name: "Aman Kumar Karan",
+      position: "Software Devloper",
+      bio: "Aman brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
+      image: "/aman.jpeg?height=500&width=400&text=Sarah",
     },
     {
-      name: "Michael Chen",
-      position: "VP of Engineering",
-      bio: "Michael's technical expertise and problem-solving skills help us deliver robust and scalable solutions.",
-      image: "/placeholder.svg?height=400&width=400&text=Michael",
+      name: "Amit Aryan",
+      position: "ServiceNow Devloper",
+      bio: "Amit brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
+      image: "/amit.jpeg",
     },
     {
-      name: "Emily Rodriguez",
+      name: "Vishal Yadav",
+      position: "Software Devloper",
+      bio: "Vishal brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
+      image: "/vishal.jpg?height=400&width=400&text=Sarah",
+    },
+    {
+      name: "Sunil Kumar",
+      position: "Software Devloper",
+      bio: "Sunil's technical expertise and problem-solving skills help us deliver robust and scalable solutions.",
+      image: "/sunil.jpeg?height=400&width=400&text=Michael",
+    },
+    {
+      name: "Ashmit Raj",
       position: "Director of Data Science",
-      bio: "Emily leads our data science initiatives, helping clients extract valuable insights from their data.",
-      image: "/placeholder.svg?height=400&width=400&text=Emily",
+      bio: "Ashmit leads our data science initiatives, helping clients extract valuable insights from their data.",
+      image: "/Ashmit1.png?height=400&width=400&text=Emily",
     },
   ]
 

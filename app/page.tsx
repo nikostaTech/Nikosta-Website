@@ -86,6 +86,7 @@ export default function Home() {
       iconColor: "text-blue-500",
       bgGradient: "from-blue-500/10 to-indigo-600/5",
       
+      
     },
     {
       icon: Cloud,
@@ -113,6 +114,7 @@ export default function Home() {
       color: "from-red-500 to-pink-600",
       iconColor: "text-red-500",
       bgGradient: "from-red-500/10 to-pink-600/5",
+      
       
     },
   ]

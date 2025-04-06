@@ -189,19 +189,24 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <div className="mx-auto max-w-6xl">
-            <div className="rounded-lg overflow-hidden h-[400px] w-full">
-              <div className="h-full w-full bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-500">Map will be displayed here</p>
-                {/* In a real implementation, you would integrate Google Maps or another map provider here */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="container px-4 md:px-6">
+    <div className="mx-auto max-w-6xl">
+      <div className="rounded-lg overflow-hidden h-[400px] w-full">
+        <iframe
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          style={{ border: 0 }}
+          loading="lazy"
+          allowFullScreen
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHTnZv-2EGH-J7Xhwa152G9Ardb4Woil0&q=Greater+Noida,+Uttar+Pradesh"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   )
 }

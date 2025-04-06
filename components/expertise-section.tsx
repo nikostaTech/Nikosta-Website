@@ -9,7 +9,7 @@ const expertiseItems = [
     id: "software-development",
     title: "Software Development",
     description: "Custom software solutions tailored to your business needs.",
-    imagePath: "/expertise/software-dev.jpg", // You can replace with your actual image paths
+    imagePath: "/soft.jpg", // You can replace with your actual image paths
     link: "/services#software-development",
   },
   {
