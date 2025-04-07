@@ -82,21 +82,21 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6 text-black" />
                   <div>
                     <h3 className="font-medium">Our Office</h3>
-                    <p className="text-sm text-gray-500">123 Tech Park, Silicon Valley, CA</p>
+                    <p className="text-sm text-gray-500">Delta 2, Greater Noida, Uttar Pradesh</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Mail className="h-6 w-6 text-black" />
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-sm text-gray-500">info@nikosta.com</p>
+                    <p className="text-sm text-gray-500">contact@nikosta.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Phone className="h-6 w-6 text-black" />
                   <div>
                     <h3 className="font-medium">Phone</h3>
-                    <p className="text-sm text-gray-500">+1 (123) 456-7890</p>
+                    <p className="text-sm text-gray-500">+91 9560603635</p>
                   </div>
                 </div>
               </div>
