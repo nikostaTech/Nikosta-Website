@@ -214,7 +214,7 @@ export default function Home() {
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
             <button
               onClick={scrollToExpertise}
-              className="animate-bounce p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 cursor-pointer"
+              className="animate-bounce p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-600 cursor-pointer"
               aria-label="Scroll to expertise section"
             >
               <svg className="w-6 h-6 text-white" fill="none" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">

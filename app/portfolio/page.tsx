@@ -8,52 +8,45 @@ export default function PortfolioPage() {
   const projects = [
     {
       id: 1,
-      title: "Enterprise Cloud Migration",
-      category: "Cloud Solutions",
+      title: "Taxall",
+      category: "Finance Solutions",
       description:
-        "Migrated a large enterprise from legacy infrastructure to a scalable cloud architecture, reducing operational costs by 40%.",
-      image: "/cloud.jpg",
+        "Taxall is an AI-powered platform offering easy tax filing, smart calculations, chatbot support, secure access, and report generation.",
+      image: "/taxall.png",
     },
     {
       id: 2,
-      title: "Financial Services Platform",
-      category: "Software Development",
+      title: "Tradeneeti",
+      category: "Financial Services Institute",
       description:
-        "Developed a secure, compliant financial services platform with real-time transaction processing and analytics.",
-      image: "/finance.jpg",
+        "A Financial Services Institute offering expert solutions in tax, investment, and compliance through smart technology, personalized advice, and secure platforms.",
+      image: "/tradeneeti.png",
     },
     {
       id: 3,
-      title: "Healthcare Data Analytics",
-      category: "Data Analytics",
+      title: "Chilli Restaurant",
+      category: "Restaurant website",
       description:
-        "Implemented a comprehensive data analytics solution for a healthcare provider, improving patient outcomes and operational efficiency.",
-      image: "/dataanalytics.jpg",
+        "A cozy restaurant serving delicious, freshly prepared meals with warm hospitality, vibrant ambiance, and a menu inspired by global flavors.",
+      image: "/chilli.png",
     },
     {
       id: 4,
-      title: "Retail Security Enhancement",
-      category: "Cybersecurity",
+      title: "MAA AHILYA BAI HOSPITAL",
+      category: "Medical",
       description:
-        "Strengthened the security posture of a major retail chain, protecting customer data and preventing potential breaches.",
-      image: "/cyber.jpg",
+        "Website for Maa Ahilya Bai Hospital offering services, specialties, emergency care, and patient-friendly information access.",
+      image: "/hospital.png",
     },
     {
       id: 5,
-      title: "Manufacturing IoT Solution",
-      category: "IoT & Edge Computing",
+      title: "Skin Cancer Classification",
+      category: "Medical",
       description:
-        "Designed and implemented an IoT solution for a manufacturing company, enabling real-time monitoring and predictive maintenance.",
-      image: "/iot.jpg",
+        "Developed a machine learning-based skin cancer classification system to assist hospitals in early detection using medical image analysis.",
+      image: "/cancerdet copy.png",
     },
-    {
-      id: 6,
-      title: "Government Portal Modernization",
-      category: "Digital Transformation",
-      description:
-        "Modernized a government agency's citizen services portal, improving accessibility and user experience while ensuring security.",
-      image: "/digi.jpg",
-    },
+    
   ]
 
   return (
@@ -107,7 +100,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Industries Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+      <section className="w-full py-12 md:py-24 lg:py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
