@@ -85,8 +85,6 @@ export default function Home() {
       color: "from-blue-500 to-indigo-600",
       iconColor: "text-blue-500",
       bgGradient: "from-blue-500/10 to-indigo-600/5",
-      
-      
     },
     {
       icon: Cloud,
@@ -114,12 +112,9 @@ export default function Home() {
       color: "from-red-500 to-pink-600",
       iconColor: "text-red-500",
       bgGradient: "from-red-500/10 to-pink-600/5",
-      
-      
     },
   ]
 
-  // Case study data with different images and titles
   const caseStudies = [
     {
       id: 1,
@@ -140,6 +135,11 @@ export default function Home() {
       image: "/health.jpg",
     },
   ]
+
+  // Scroll to the expertise section when the arrow is clicked.
+  const scrollToNextSection = () => {
+    expertiseRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -178,8 +178,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="max-w-[600px] text-gray-400 md:text-xl">
-                  Nikosta delivers cutting-edge technology services that drive innovation, efficiency, and growth for
-                  enterprises worldwide.
+                  Nikosta delivers cutting-edge technology services that drive innovation, efficiency, and growth for enterprises worldwide.
                 </p>
               </div>
               <div className="flex flex-col gap-3 min-[400px]:flex-row">
@@ -206,9 +205,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
 
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+          {/* Arrow that scrolls to expertise section */}
+          <div
+            onClick={scrollToNextSection}
+            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center cursor-pointer"
+          >
             <div className="animate-bounce">
               <svg className="w-6 h-6 text-white" fill="none" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -528,4 +530,3 @@ export default function Home() {
     </div>
   )
 }
-
