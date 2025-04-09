@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
@@ -39,7 +38,6 @@ export default function Home() {
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return
 
-      // Throttle the mouse move event for better performance
       if ((window as any).mouseMoveThrottle) return
       ;(window as any).mouseMoveThrottle = true
 
@@ -49,7 +47,6 @@ export default function Home() {
 
       const { clientX, clientY } = e
       const { width, height, left, top } = heroRef.current.getBoundingClientRect()
-
       const x = Math.min(Math.max((clientX - left) / width, 0), 1)
       const y = Math.min(Math.max((clientY - top) / height, 0), 1)
 
@@ -60,6 +57,13 @@ export default function Home() {
     document.addEventListener("mousemove", handleMouseMove)
     return () => document.removeEventListener("mousemove", handleMouseMove)
   }, [])
+
+  // Function to scroll to the expertise section
+  const scrollToExpertise = () => {
+    if (expertiseRef.current) {
+      expertiseRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   const technologies = [
     "React",
@@ -85,6 +89,7 @@ export default function Home() {
       color: "from-blue-500 to-indigo-600",
       iconColor: "text-blue-500",
       bgGradient: "from-blue-500/10 to-indigo-600/5",
+      link: "/services#software-development",
     },
     {
       icon: Cloud,
@@ -94,6 +99,7 @@ export default function Home() {
       color: "from-cyan-500 to-blue-600",
       iconColor: "text-cyan-500",
       bgGradient: "from-cyan-500/10 to-blue-600/5",
+      link: "/services#cloud-solutions",
     },
     {
       icon: Database,
@@ -103,6 +109,7 @@ export default function Home() {
       color: "from-purple-500 to-indigo-600",
       iconColor: "text-purple-500",
       bgGradient: "from-purple-500/10 to-indigo-600/5",
+      link: "/services#data-analytics",
     },
     {
       icon: Shield,
@@ -112,6 +119,7 @@ export default function Home() {
       color: "from-red-500 to-pink-600",
       iconColor: "text-red-500",
       bgGradient: "from-red-500/10 to-pink-600/5",
+      link: "/services#cybersecurity",
     },
   ]
 
@@ -136,23 +144,13 @@ export default function Home() {
     },
   ]
 
-  // Scroll to the expertise section when the arrow is clicked.
-  const scrollToNextSection = () => {
-    expertiseRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section
         ref={heroRef}
         className="relative w-full min-h-screen flex items-center justify-center bg-black bg-hero-pattern overflow-hidden"
-        style={
-          {
-            "--mouse-x": "0.5",
-            "--mouse-y": "0.5",
-          } as React.CSSProperties
-        }
+        style={{ "--mouse-x": "0.5", "--mouse-y": "0.5" } as React.CSSProperties}
       >
         <AnimatedBackground className="opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black/90"></div>
@@ -169,7 +167,12 @@ export default function Home() {
                   Transforming Business Through{" "}
                   <span className="typing-text-container">
                     <TypingEffect
-                      texts={["Advanced Technology", "Digital Innovation", "Cloud Solutions", "AI Integration"]}
+                      texts={[
+                        "Advanced Technology",
+                        "Digital Innovation",
+                        "Cloud Solutions",
+                        "AI Integration",
+                      ]}
                       typingSpeed={80}
                       deletingSpeed={40}
                       delayBetweenTexts={2000}
@@ -178,7 +181,8 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="max-w-[600px] text-gray-400 md:text-xl">
-                  Nikosta delivers cutting-edge technology services that drive innovation, efficiency, and growth for enterprises worldwide.
+                  Nikosta delivers cutting-edge technology services that drive innovation, efficiency, and growth for
+                  enterprises worldwide.
                 </p>
               </div>
               <div className="flex flex-col gap-3 min-[400px]:flex-row">
@@ -206,16 +210,17 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Arrow that scrolls to expertise section */}
-          <div
-            onClick={scrollToNextSection}
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center cursor-pointer"
-          >
-            <div className="animate-bounce">
+          {/* Updated arrow with onClick handler */}
+          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+            <button
+              onClick={scrollToExpertise}
+              className="animate-bounce p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 cursor-pointer"
+              aria-label="Scroll to expertise section"
+            >
               <svg className="w-6 h-6 text-white" fill="none" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                 <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
               </svg>
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -223,6 +228,7 @@ export default function Home() {
       {/* Services Section */}
       <section
         ref={expertiseRef}
+        id="expertise-section"
         className="w-full py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
       >
         {/* Background Elements */}
@@ -257,6 +263,7 @@ export default function Home() {
                 iconColorClass={item.iconColor}
                 bgGradientClass={item.bgGradient}
                 delay={index * 0.1}
+                link={item.link}
               />
             ))}
           </div>
@@ -384,7 +391,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
           <TechStackCarousel technologies={technologies} />
         </div>
       </section>
@@ -397,7 +403,9 @@ export default function Home() {
               <Badge variant="premium" className="px-3 py-1 text-sm">
                 Case Studies
               </Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Success Stories</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Success Stories
+              </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 See how we've helped organizations achieve their technology goals.
               </p>
@@ -453,7 +461,9 @@ export default function Home() {
               <Badge variant="premium" className="px-3 py-1 text-sm">
                 Testimonials
               </Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Client Feedback</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Client Feedback
+              </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 What our clients say about working with us.
               </p>

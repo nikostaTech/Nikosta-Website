@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 import type { LucideIcon } from "lucide-react"
 import { CheckCircle2 } from "lucide-react"
@@ -14,6 +15,7 @@ interface EnhancedTechCardProps {
   colorClass: string
   iconColorClass: string
   bgGradientClass: string
+  link: string  // Renamed from "learnLink" to "link" for consistency
   delay?: number
 }
 
@@ -25,6 +27,7 @@ export function EnhancedTechCard({
   colorClass,
   iconColorClass,
   bgGradientClass,
+  link,
   delay = 0,
 }: EnhancedTechCardProps) {
   const [isHovered, setIsHovered] = useState(false)
@@ -120,8 +123,8 @@ export function EnhancedTechCard({
 
         {/* Learn more link */}
         <div className="relative z-10 mt-6 pt-4 border-t border-gray-100">
-          <a
-            href="#"
+          <Link
+            href={link}
             className={cn(
               "inline-flex items-center text-sm font-medium transition-colors",
               iconColorClass,
@@ -141,10 +144,9 @@ export function EnhancedTechCard({
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </motion.div>
   )
 }
-
