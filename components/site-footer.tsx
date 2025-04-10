@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { Github, Linkedin, Twitter, Instagram } from "lucide-react"
 
 export function SiteFooter() {
   // Function to handle navigation
@@ -29,7 +29,7 @@ export function SiteFooter() {
                 <span className="sr-only">GitHub</span>
               </button>
               <button
-                onClick={() => window.open("https://twitter.com", "_blank")}
+                onClick={() => window.open("https://x.com/Nikosta_tech", "_blank")}
                 className="text-gray-400 hover:text-primary-500 transition-colors"
               >
                 <Twitter className="h-5 w-5" />
@@ -41,6 +41,13 @@ export function SiteFooter() {
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
+              </button>
+              <button
+                onClick={() => window.open("https://www.instagram.com/nikosta__?utm_source=qr&igsh=MXVwY2RweGJmYjBlMg%3D%3D", "_blank")}
+                className="text-gray-400 hover:text-primary-500 transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
               </button>
             </div>
           </div>
@@ -125,4 +132,3 @@ export function SiteFooter() {
     </footer>
   )
 }
-

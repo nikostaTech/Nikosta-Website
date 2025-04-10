@@ -137,14 +137,14 @@ export default function AboutPage() {
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">
               <Users className="h-12 w-12 text-white" />
               <div className="text-center">
-                <h3 className="text-3xl font-bold">10+</h3>
+                <h3 className="text-3xl font-bold">5+</h3>
                 <p className="text-gray-400">Clients Worldwide</p>
               </div>
             </div>
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">
               <Award className="h-12 w-12 text-white" />
               <div className="text-center">
-                <h3 className="text-3xl font-bold">30+</h3>
+                <h3 className="text-3xl font-bold">5+</h3>
                 <p className="text-gray-400">Projects Completed</p>
               </div>
             </div>

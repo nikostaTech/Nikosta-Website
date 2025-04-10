@@ -67,14 +67,14 @@ export function OurStorySection() {
               <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                 <Users className="h-10 w-10 text-primary-500" />
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold">10+</h3>
+                  <h3 className="text-3xl font-bold">5+</h3>
                   <p className="text-gray-500">Clients Worldwide</p>
                 </div>
               </div>
               <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                 <Award className="h-10 w-10 text-primary-500" />
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold">30+</h3>
+                  <h3 className="text-3xl font-bold">5+</h3>
                   <p className="text-gray-500">Projects Completed</p>
                 </div>
               </div>
