@@ -98,7 +98,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Industries Section */}
+      {/* Industries Section - Fixed for small displays */}
       <section className="w-full py-12 md:py-24 lg:py-20 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -109,7 +109,7 @@ export default function PortfolioPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 py-12 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:gap-6 md:gap-8 py-12 md:grid-cols-3 lg:grid-cols-4">
             {[
               "Financial Services",
               "Healthcare",
@@ -120,8 +120,11 @@ export default function PortfolioPage() {
               "Technology",
               "Transportation",
             ].map((industry, index) => (
-              <div key={index} className="flex flex-col items-center justify-center rounded-lg border p-6 shadow-sm">
-                <span className="text-lg font-medium">{industry}</span>
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center rounded-lg border p-3 sm:p-4 md:p-6 shadow-sm text-center h-full"
+              >
+                <span className="text-sm sm:text-base md:text-lg font-medium break-words hyphens-auto">{industry}</span>
               </div>
             ))}
           </div>

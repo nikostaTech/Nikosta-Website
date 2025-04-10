@@ -8,31 +8,31 @@ export default function AboutPage() {
   const team = [
     {
       name: "Ashish Raj",
-      position: "Software Devloper",
+      position: "Software Developer",
       bio: "With over 2 years of experience in enterprise technology, John leads our team with vision and expertise.",
       image: "/ashu.png?height=400&width=400&text=John",
     },
     {
       name: "Aman Kumar Karan",
-      position: "Software Devloper",
+      position: "Software Developer",
       bio: "Aman brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
       image: "/aman.jpeg?height=500&width=400&text=Sarah",
     },
     {
       name: "Amit Aryan",
-      position: "ServiceNow Devloper",
+      position: "ServiceNow Developer",
       bio: "Amit brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
       image: "/amit.jpeg",
     },
     {
       name: "Vishal Yadav",
-      position: "Software Devloper",
+      position: "Software Developer",
       bio: "Vishal brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
       image: "/vishal.jpg?height=400&width=400&text=Sarah",
     },
     {
       name: "Sunil Kumar",
-      position: "Software Devloper",
+      position: "Software Developer",
       bio: "Sunil's technical expertise and problem-solving skills help us deliver robust and scalable solutions.",
       image: "/sunil.jpeg?height=400&width=400&text=Michael",
     },
@@ -130,8 +130,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+      {/* Stats Section - Hidden on small screens, visible on md and up */}
+      <section className="hidden md:block w-full py-12 md:py-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 md:grid-cols-3">
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">

@@ -89,8 +89,16 @@ export default function ServicesPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className={`flex items-center justify-center ${index % 2 !== 0 ? "lg:order-last" : ""}`}>
-                <div className="relative h-[350px] w-full overflow-hidden rounded-xl">
-                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
+                {/* Modified image container to fix responsive issues */}
+                <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-xl overflow-hidden">
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-full"
+                    style={{ objectPosition: "center" }}
+                  />
                 </div>
               </div>
               <div className="flex flex-col justify-center space-y-4">

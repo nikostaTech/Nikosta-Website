@@ -112,7 +112,7 @@ export function SiteFooter() {
               onClick={() => (window.location.href = "tel:+91 9560603635")}
               className="text-sm text-left text-gray-400 hover:text-primary-500 transition-colors"
             >
-              +1 (123) 456-7890
+              +91 956060 3635
             </button>
           </div>
         </div>
