@@ -189,7 +189,7 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      {/* Process Section */}
+      {/* Process Section - Fixed to ensure equal height boxes */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -200,7 +200,7 @@ export default function ServicesPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-5xl items-stretch gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 step: "1",
@@ -228,13 +228,13 @@ export default function ServicesPage() {
             ].map((process, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center space-y-2 rounded-lg border border-gray-800 bg-gray-900 p-6"
+                className="flex flex-col items-center h-full rounded-lg border border-gray-800 bg-gray-900 p-6"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold text-black">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold text-black mb-4">
                   {process.step}
                 </div>
-                <h3 className="text-xl font-bold">{process.title}</h3>
-                <p className="text-center text-sm text-gray-400">{process.description}</p>
+                <h3 className="text-xl font-bold mb-3">{process.title}</h3>
+                <p className="text-center text-sm text-gray-400 mt-auto">{process.description}</p>
               </div>
             ))}
           </div>
