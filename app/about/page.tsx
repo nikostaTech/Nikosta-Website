@@ -46,28 +46,29 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+      {/* Hero Section - Centered heading and modified layout */}
+      <section className="w-full pt-24 pb-12 sm:pt-28 md:pt-32 md:pb-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">About Nikosta</h1>
-                <p className="max-w-[600px] text-gray-400 md:text-xl/relaxed">
-                  We're a team of technology experts dedicated to helping businesses succeed in the digital era.
-                </p>
-              </div>
+          {/* Centered heading and description */}
+          <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
+            <div className="space-y-3 max-w-[800px]">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl md:text-6xl">About Nikosta</h1>
+              <p className="text-gray-400 md:text-xl/relaxed">
+                We're a team of technology experts dedicated to helping businesses succeed in the digital era.
+              </p>
             </div>
-            <div className="flex items-center justify-center">
-              <div className="relative h-[350px] w-full overflow-hidden rounded-xl">
-                <Image
-                  src="/aboutnic.jpg?height=700&width=700&text=About+Us"
-                  alt="About Nikosta"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+          </div>
+
+          {/* Image below the centered heading */}
+          <div className="flex justify-center">
+            <div className="relative h-[350px] w-full max-w-[800px] overflow-hidden rounded-xl">
+              <Image
+                src="/aboutnic.jpg?height=700&width=700&text=About+Us"
+                alt="About Nikosta"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -169,7 +170,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
             {team.map((member, index) => (
               <div key={index} className="flex flex-col items-center space-y-4">
                 <div className="relative h-40 w-40 overflow-hidden rounded-full">
@@ -186,8 +187,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+      {/* CTA Section - Added extra padding at the top and bottom for better spacing */}
+      <section className="w-full pt-24 pb-24 sm:pt-28 md:pt-32 md:pb-32 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -207,7 +208,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Add extra space at the bottom to prevent any overlap with fixed elements */}
+      <div className="h-16 sm:h-18 md:h-20 bg-black"></div>
     </div>
   )
 }
-

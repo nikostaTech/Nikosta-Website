@@ -46,13 +46,12 @@ export default function PortfolioPage() {
         "Developed a machine learning-based skin cancer classification system to assist hospitals in early detection using medical image analysis.",
       image: "/cancerdet copy.png",
     },
-    
   ]
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+      {/* Hero Section - Added extra padding at the top for header space */}
+      <section className="w-full pt-24 pb-12 sm:pt-28 md:pt-32 md:pb-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -155,4 +154,3 @@ export default function PortfolioPage() {
     </div>
   )
 }
-

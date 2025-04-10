@@ -1,13 +1,15 @@
-"use client";
+"use client"
 
-import { useState, FormEvent, useTransition } from "react";
-import { sendEmail } from "../actions/send-email";
-import toast from "react-hot-toast"; // Use react-hot-toast directly
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import type React from "react"
+
+import { useState, type FormEvent, useTransition } from "react"
+import { sendEmail } from "../actions/send-email"
+import toast from "react-hot-toast" // Use react-hot-toast directly
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -16,29 +18,35 @@ export default function ContactPage() {
     phone: "",
     company: "",
     message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isPending, startTransition] = useTransition();
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isPending, startTransition] = useTransition()
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+
+    // Only allow numbers for phone field
+    if (name === "phone" && value !== "") {
+      const numericValue = value.replace(/[^0-9]/g, "")
+      setFormData((prev) => ({ ...prev, [name]: numericValue }))
+      return
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
     startTransition(async () => {
       try {
-        await sendEmail(formData);
+        await sendEmail(formData)
         // Show success notification
-        toast.success("Message Sent! Thank you for contacting us.");
+        toast.success("Message Sent! Thank you for contacting us.")
       } catch (error) {
-        console.error(error);
-        toast.error("There was an error sending your message. Please try again later.");
+        console.error(error)
+        toast.error("There was an error sending your message. Please try again later.")
       } finally {
         setFormData({
           name: "",
@@ -46,24 +54,26 @@ export default function ContactPage() {
           phone: "",
           company: "",
           message: "",
-        });
-        setIsSubmitting(false);
+        })
+        setIsSubmitting(false)
       }
-    });
-  };
+    })
+  }
+
+  // Helper function to render required field indicator
+  const RequiredIndicator = () => <span className="text-red-500 ml-1">*</span>
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+      {/* Hero Section - Added extra padding at the top for header space */}
+      <section className="w-full pt-24 pb-12 sm:pt-28 md:pt-32 md:pb-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
-              </h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Get in Touch</h1>
               <p className="max-w-[700px] text-gray-400 md:text-xl/relaxed">
-                Have a project in mind? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
+                Have a project in mind? We'd love to hear from you. Fill out the form below and we'll get back to you as
+                soon as possible.
               </p>
             </div>
           </div>
@@ -127,10 +137,16 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="rounded-lg border p-6 shadow-sm">
               <h2 className="text-2xl font-bold">Send Us a Message</h2>
+              <p className="text-sm text-gray-500 mt-2">
+                Fields marked with <span className="text-red-500">*</span> are required
+              </p>
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name">
+                      Name
+                      <RequiredIndicator />
+                    </Label>
                     <Input
                       id="name"
                       name="name"
@@ -141,7 +157,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">
+                      Email
+                      <RequiredIndicator />
+                    </Label>
                     <Input
                       id="email"
                       name="email"
@@ -155,13 +174,32 @@ export default function ContactPage() {
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone</Label>
+                    <Label htmlFor="phone">
+                      Phone
+                      <RequiredIndicator />
+                    </Label>
                     <Input
                       id="phone"
                       name="phone"
                       placeholder="Your phone number"
+                      required
+                      type="tel"
+                      pattern="[0-9]*"
+                      inputMode="numeric"
                       value={formData.phone}
                       onChange={handleChange}
+                      onKeyPress={(e) => {
+                        // Allow only numbers and control keys
+                        if (
+                          !/[0-9]/.test(e.key) &&
+                          e.key !== "Backspace" &&
+                          e.key !== "Delete" &&
+                          e.key !== "ArrowLeft" &&
+                          e.key !== "ArrowRight"
+                        ) {
+                          e.preventDefault()
+                        }
+                      }}
                     />
                   </div>
                   <div className="space-y-2">
@@ -176,7 +214,10 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">
+                    Message
+                    <RequiredIndicator />
+                  </Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -200,24 +241,36 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Google Map Section */}
+      {/* Map Section - Using OpenStreetMap instead of Google Maps */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-6xl">
-            <div className="rounded-lg overflow-hidden h-[400px] w-full">
+            <div className="rounded-lg overflow-hidden h-[400px] w-full border shadow-sm">
               <iframe
                 width="100%"
                 height="100%"
                 frameBorder="0"
+                scrolling="no"
+                marginHeight={0}
+                marginWidth={0}
+                src="https://www.openstreetmap.org/export/embed.html?bbox=77.4500%2C28.4500%2C77.5500%2C28.5500&amp;layer=mapnik&amp;marker=28.4963%2C77.5030"
                 style={{ border: 0 }}
-                loading="lazy"
-                allowFullScreen
-                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=Greater+Noida,+Uttar+Pradesh`}
+                title="Nikosta Office Location"
               ></iframe>
+              <div className="mt-2 text-center">
+                <a
+                  href="https://www.openstreetmap.org/?mlat=28.4963&amp;mlon=77.5030#map=13/28.4963/77.5030"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-600 hover:text-black underline"
+                >
+                  View Larger Map
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-  );
+  )
 }
