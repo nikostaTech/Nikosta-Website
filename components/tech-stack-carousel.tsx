@@ -9,45 +9,66 @@ interface TechStackCarouselProps {
 }
 
 export function TechStackCarousel({ technologies, className }: TechStackCarouselProps) {
-  const [position, setPosition] = useState(0)
-  const itemWidth = 150 // Width of each tech item in pixels
+  const [scrollPosition, setScrollPosition] = useState(0)
 
+  // Create a duplicated array for infinite scrolling effect
+  const displayItems = [...technologies, ...technologies]
+
+  // Calculate item width based on screen size
+  const getItemWidth = () => {
+    if (typeof window === "undefined") return 150
+    if (window.innerWidth < 640) return 120
+    if (window.innerWidth < 1024) return 150
+    return 180
+  }
+
+  // Auto-scroll animation
   useEffect(() => {
-    const interval = setInterval(() => {
-      setPosition((prev) => {
-        // Reset to beginning when we've scrolled through all items
-        if (prev >= technologies.length - 1) {
+    const scrollInterval = setInterval(() => {
+      setScrollPosition((prev) => {
+        // Reset when we've scrolled through all original items
+        if (prev >= technologies.length * getItemWidth()) {
           return 0
         }
         return prev + 1
       })
-    }, 3000)
+    }, 30) // Smooth scrolling with small increments
 
-    return () => clearInterval(interval)
+    return () => clearInterval(scrollInterval)
   }, [technologies.length])
 
   return (
-    <div className={cn("relative overflow-hidden h-24", className)}>
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none" />
-      <div
-        className="flex items-center transition-transform duration-1000 ease-in-out"
-        style={{
-          transform: `translateX(-${position * itemWidth}px)`,
-        }}
-      >
-        {/* Duplicate the array to create an infinite loop effect */}
-        {[...technologies, ...technologies].map((tech, index) => (
-          <div key={`${tech}-${index}`} className="flex-shrink-0 w-[150px] px-4 py-2 mx-4 text-center">
-            <div className="flex flex-col items-center justify-center h-full">
-              <div className="h-10 w-10 bg-gradient-to-br from-primary-500/20 to-secondary-500/20 rounded-full flex items-center justify-center mb-2">
-                <span className="text-lg font-bold text-primary-500 select-none">{tech.charAt(0)}</span>
-              </div>
-              <span className="text-sm font-medium text-white whitespace-nowrap">{tech}</span>
+    <div className={cn("w-full bg-black py-8 overflow-hidden", className)}>
+      <div className="container mx-auto px-4">
+        <div className="relative">
+          {/* Left fade effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black to-transparent z-10" />
+
+          {/* Right fade effect */}
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-black to-transparent z-10" />
+
+          {/* Scrolling container */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-1000 ease-linear"
+              style={{ transform: `translateX(-${scrollPosition}px)` }}
+            >
+              {displayItems.map((tech, index) => (
+                <div key={`tech-${index}`} className="flex-shrink-0 px-4 py-2" style={{ width: `${getItemWidth()}px` }}>
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-white/10 flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                      <span className="text-lg sm:text-xl md:text-2xl font-bold text-blue-400 bg-clip-text text-transparent bg-gradient-to-b from-blue-300 to-blue-600">
+                        {tech.charAt(0)}
+                      </span>
+                    </div>
+                    <span className="text-sm sm:text-base text-white whitespace-nowrap">{tech}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   )
 }
-
