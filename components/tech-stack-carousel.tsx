@@ -10,11 +10,15 @@ interface TechStackCarouselProps {
 
 export function TechStackCarousel({ technologies, className }: TechStackCarouselProps) {
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [mounted, setMounted] = useState(false)
+  const [itemWidth, setItemWidth] = useState(150) // initial fallback width
 
-  // Create a duplicated array for infinite scrolling effect
-  const displayItems = [...technologies, ...technologies]
+  // Set mounted flag on client-side mount
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-  // Calculate item width based on screen size
+  // Function to compute the item width based on the current window size
   const getItemWidth = () => {
     if (typeof window === "undefined") return 150
     if (window.innerWidth < 640) return 120
@@ -22,12 +26,25 @@ export function TechStackCarousel({ technologies, className }: TechStackCarousel
     return 180
   }
 
-  // Auto-scroll animation
+  // Update itemWidth on mount and whenever the window is resized
   useEffect(() => {
+    if (!mounted) return
+    const updateWidth = () => setItemWidth(getItemWidth())
+    updateWidth()
+    window.addEventListener("resize", updateWidth)
+    return () => window.removeEventListener("resize", updateWidth)
+  }, [mounted])
+
+  // Create a duplicated array for an infinite scrolling effect
+  const displayItems = [...technologies, ...technologies]
+
+  // Auto-scroll animation (depends on the accurate itemWidth)
+  useEffect(() => {
+    if (!mounted) return
     const scrollInterval = setInterval(() => {
       setScrollPosition((prev) => {
         // Reset when we've scrolled through all original items
-        if (prev >= technologies.length * getItemWidth()) {
+        if (prev >= technologies.length * itemWidth) {
           return 0
         }
         return prev + 1
@@ -35,7 +52,10 @@ export function TechStackCarousel({ technologies, className }: TechStackCarousel
     }, 30) // Smooth scrolling with small increments
 
     return () => clearInterval(scrollInterval)
-  }, [technologies.length])
+  }, [technologies.length, itemWidth, mounted])
+
+  // Do not render until after mount to avoid SSR/CSR mismatch
+  if (!mounted) return null
 
   return (
     <div className={cn("w-full bg-black py-8 overflow-hidden", className)}>
@@ -54,7 +74,11 @@ export function TechStackCarousel({ technologies, className }: TechStackCarousel
               style={{ transform: `translateX(-${scrollPosition}px)` }}
             >
               {displayItems.map((tech, index) => (
-                <div key={`tech-${index}`} className="flex-shrink-0 px-4 py-2" style={{ width: `${getItemWidth()}px` }}>
+                <div
+                  key={`tech-${index}`}
+                  className="flex-shrink-0 px-4 py-2"
+                  style={{ width: `${itemWidth}px` }}
+                >
                   <div className="flex flex-col items-center justify-center text-center">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-white/10 flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                       <span className="text-lg sm:text-xl md:text-2xl font-bold text-blue-400 bg-clip-text text-transparent bg-gradient-to-b from-blue-300 to-blue-600">
