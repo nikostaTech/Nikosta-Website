@@ -70,7 +70,7 @@ export default function ServicesPage() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Solutions</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Tech Expertise</h1>
               <p className="max-w-[700px] text-gray-400 md:text-xl/relaxed">
                 We offer comprehensive technology solutions to help your business thrive in the digital era.
               </p>
