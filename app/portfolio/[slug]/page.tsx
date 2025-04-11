@@ -25,9 +25,9 @@ const projects = [
       "Improved user experience and accuracy in tax filing. Enabled seamless, quick, and reliable tax report generation and assistance.",
     technologies: ["React.js", "Spring Boot", "Java", "AI Chatbot", "MySQL"],
     images: [
-      "/taxall.png",
-      "/taxall2.png",
-      "/taxall3.png",
+      "/taxall23.png",
+      "/taxallpro.png",
+      "/Taxall04.png",
     ],
   },  
   {
@@ -53,67 +53,67 @@ const projects = [
   },  
   {
     id: "3",
-    title: "Healthcare Data Analytics",
-    category: "Data Analytics",
-    client: "Healthcare Provider",
-    year: "2023",
+    title: "Chilli Restaurant - Dining Experience",
+    category: "Restaurant",
+    client: "Local Food Lovers",
+    year: "2024",
     description:
-      "Implemented a comprehensive data analytics solution to process large healthcare datasets and deliver actionable insights, improving patient outcomes and efficiency.",
+      "Chilli Restaurant is a vibrant dining spot located in Patna, Bihar, known for its delicious multi-cuisine menu and warm ambiance.",
     challenge:
-      "The client required a system to process complex data sets and convert them into understandable insights for better decision-making.",
+      "The restaurant needed a modern digital presence to showcase its menu, ambiance, and attract more local customers.",
     solution:
-      "Using Next.js and advanced visualization libraries, we developed an analytics platform that transformed raw data into clear reports.",
+      "We developed a responsive website highlighting the menu, special dishes, gallery, and easy reservation options for a better user experience.",
     results:
-      "The solution enabled a 30% improvement in patient treatment plans and significantly streamlined hospital operations.",
-    technologies: ["Next.js", "React", "MongoDB", "D3.js", "Python"],
+      "The restaurant saw increased footfall, improved customer engagement, and enhanced visibility in the Patna food scene.",
+    technologies: ["HTML", "CSS", "JavaScript", "React.js", "Firebase"],
     images: [
-      "/images/health1.jpg",
-      "/images/health2.jpg",
-      "/images/health3.jpg",
+      "/chilli.png",
+      "/chilli02.png",
+      "/chilli03.png",
     ],
-  },
+  },  
   {
     id: "4",
-    title: "Retail Security Enhancement",
-    category: "Cybersecurity",
-    client: "Major Retail Chain",
-    year: "2022",
+    title: "MAA AHILYA BAI HOSPITAL - Healthcare Facility",
+    category: "Hospital / Healthcare",
+    client: "Patients & Local Community",
+    year: "2024",
     description:
-      "Strengthened the security posture of a major retail chain by implementing advanced threat detection and prevention systems.",
+      "MAA AHILYA BAI HOSPITAL is a trusted healthcare facility in Kanpur Nagar, offering quality medical services and 24/7 emergency care.",
     challenge:
-      "The client needed to protect customer data and secure their IT infrastructure against potential breaches.",
+      "The hospital needed a digital platform to enhance patient engagement, share service details, and improve appointment accessibility.",
     solution:
-      "We deployed cutting-edge cybersecurity solutions and continuous monitoring systems to safeguard their networks.",
+      "We created a responsive website showcasing departments, emergency services, doctor profiles, and an easy appointment booking system.",
     results:
-      "The new security measures reduced data breaches and increased customer trust in the brand.",
-    technologies: ["Next.js", "React", "Python", "AWS", "SIEM"],
+      "The hospital saw better patient communication, improved online visibility, and smoother operations for appointments and information access.",
+    technologies: ["React.js", "HTML", "CSS", "JavaScript", "Firebase"],
     images: [
-      "/images/cyber1.jpg",
-      "/images/cyber2.jpg",
-      "/images/cyber3.jpg",
+      "/hospital.png",
+      "/hospital022.png",
+      "/hospital033.png",
     ],
-  },
+  },  
   {
     id: "5",
-    title: "Manufacturing IoT Solution",
-    category: "IoT & Edge Computing",
-    client: "Manufacturing Company",
-    year: "2022",
+    title: "Skin Cancer Classification System",
+    category: "AI / Healthcare",
+    client: "Hospitals & Dermatology Clinics",
+    year: "2024",
     description:
-      "Designed and implemented an IoT solution for a manufacturing company, enabling real-time machine monitoring and predictive maintenance.",
+      "Developed a machine learning-based system for early detection of skin cancer through medical image classification with 93% accuracy.",
     challenge:
-      "The client needed to optimize production and reduce downtime by continuously monitoring equipment performance.",
+      "Hospitals needed a fast, accurate tool to assist in diagnosing skin cancer from dermatoscopic images with minimal error.",
     solution:
-      "We integrated IoT sensors with edge computing and built an interactive dashboard for real-time performance analysis.",
+      "We built a user-friendly platform that processes up to 200 images at once and provides instant, high-confidence predictions using ML algorithms.",
     results:
-      "The solution reduced downtime by 35% and increased overall production efficiency.",
-    technologies: ["Next.js", "React", "Node.js", "IoT", "Edge Computing"],
+      "Enabled early diagnosis, reduced workload on doctors, and improved treatment outcomes through AI-powered decision support.",
+    technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "Streamlit"],
     images: [
-      "/images/iot1.jpg",
-      "/images/iot2.jpg",
-      "/images/iot3.jpg",
+      "/cancerdet.png",
+      "/cancer2.png",
+      "/cancer3.png",
     ],
-  },
+  },  
 ]
 
 export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -12,14 +12,14 @@ export default function PortfolioPage() {
       category: "Finance Solutions",
       description:
         "Taxall is an AI-powered platform offering easy tax filing, smart calculations, chatbot support, secure access, and report generation.",
-      image: "/taxall.png",
+      image: "/taxall23.png",
     },
     {
       id: 2,
       title: "Tradeneeti",
       category: "Financial Services Institute",
       description:
-        "A Financial Services Institute offering expert solutions in tax, investment, and compliance through smart technology, personalized advice, and secure platforms.",
+        "A Financial Services Institute offering expert solutions in Stock market, investment, and compliance through smart technology, personalized advice, and secure platforms.",
       image: "/tradeneeti.png",
     },
     {

@@ -7,41 +7,41 @@ import { OurStorySection } from "@/components/our-story-section"
 export default function AboutPage() {
   const team = [
     {
-      name: "Ashish Raj",
-      position: "Software Developer",
-      bio: "With over 2 years of experience in enterprise technology, John leads our team with vision and expertise.",
-      image: "/ashu.png?height=400&width=400&text=John",
+      "name": "Ashish Raj",
+      "position": "Software Developer",
+      "bio": "Ashish is a dedicated Software Developer committed to building innovative and efficient software solutions.",
+      "image": "/ashu.png?height=400&width=400&text=John"
     },
     {
-      name: "Aman Kumar Karan",
-      position: "Software Developer",
-      bio: "Aman brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
-      image: "/aman.jpeg?height=500&width=400&text=Sarah",
+      "name": "Aman Kumar Karan",
+      "position": "Devops Engineer",
+      "bio": "Aman is a dedicated DevOps Engineer committed to streamlining processes and optimizing system performance.",
+      "image": "/amaan.png?height=500&width=400&text=Sarah"
     },
     {
-      name: "Amit Aryan",
-      position: "ServiceNow Developer",
-      bio: "Amit brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
-      image: "/amit.jpeg",
+      "name": "Amit Aryan",
+      "position": "ServiceNow Developer",
+      "bio": "Amit is a dedicated ServiceNow Developer passionate about delivering innovative automation and workflow solutions.",
+      "image": "/amit.jpeg"
     },
     {
-      name: "Vishal Yadav",
-      position: "Software Developer",
-      bio: "Vishal brings deep technical knowledge and innovation leadership to drive our technology strategy and implementation.",
-      image: "/vishal.jpg?height=400&width=400&text=Sarah",
+      "name": "Vishal Yadav",
+      "position": "Java Developer",
+      "bio": "Vishal is a dedicated Java Developer focused on crafting efficient and robust applications through innovative coding practices.",
+      "image": "/vishal.jpg?height=400&width=400&text=Sarah"
     },
     {
-      name: "Sunil Kumar",
-      position: "Software Developer",
-      bio: "Sunil's technical expertise and problem-solving skills help us deliver robust and scalable solutions.",
-      image: "/sunil.jpeg?height=400&width=400&text=Michael",
+      "name": "Sunil Kumar",
+      "position": "Software Developer",
+      "bio": "Sunil is an innovative Software Developer focused on creating robust and efficient software solutions.",
+      "image": "/sunil.jpeg?height=400&width=400&text=Michael"
     },
     {
-      name: "Ashmit Raj",
-      position: "Director of Data Science",
-      bio: "Ashmit leads our data science initiatives, helping clients extract valuable insights from their data.",
-      image: "/Ashmit1.png?height=400&width=400&text=Emily",
-    },
+      "name": "Ashmit Raj",
+      "position": "Full Stack Developer ",
+      "bio": "Ashmit Raj is a dedicated Full Stack Developer skilled at bridging front-end and back-end technologies to create dynamic and efficient web applications.",
+      "image": "/Ashmit1.png?height=400&width=400&text=Emily"
+    }
   ]
 
   return (
@@ -56,19 +56,6 @@ export default function AboutPage() {
               <p className="text-gray-400 md:text-xl/relaxed">
                 We're a team of technology experts dedicated to helping businesses succeed in the digital era.
               </p>
-            </div>
-          </div>
-
-          {/* Image below the centered heading */}
-          <div className="flex justify-center">
-            <div className="relative h-[350px] w-full max-w-[800px] overflow-hidden rounded-xl">
-              <Image
-                src="/aboutnic.jpg?height=700&width=700&text=About+Us"
-                alt="About Nikosta"
-                fill
-                className="object-cover"
-                priority
-              />
             </div>
           </div>
         </div>
@@ -133,6 +120,12 @@ export default function AboutPage() {
       {/* Stats Section - Hidden on small screens, visible on md and up */}
       <section className="hidden md:block w-full py-12 md:py-24 lg:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold">Our Statistics</h2>
+            <p className="text-lg text-gray-400 mt-2">
+              A snapshot of our achievements and impact in the industry.
+            </p>
+          </div>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">
               <Users className="h-12 w-12 text-white" />

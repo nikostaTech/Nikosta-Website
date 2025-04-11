@@ -13,8 +13,8 @@ export function SiteHeader() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Solutions", href: "/services" },
-    { name: "Case Studies", href: "/portfolio" },
+    { name: "Tech", href: "/services" },
+    { name: "Projects", href: "/portfolio" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ]

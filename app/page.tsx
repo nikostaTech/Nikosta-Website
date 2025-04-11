@@ -29,6 +29,7 @@ import { AnimatedCard } from "@/components/animated-card"
 import { TechStackCarousel } from "@/components/tech-stack-carousel"
 import { TypingEffect } from "@/components/typing-effect"
 import { EnhancedTechCard } from "@/components/enhanced-tech-card"
+import { TestimonialCarousel } from "@/components/testimonial-carousel"
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -128,19 +129,19 @@ export default function Home() {
       id: 1,
       title: "Enterprise Cloud Migration",
       category: "Cloud Solutions",
-      image: "/cloud.jpg",
+      image: "/hospital.png",
     },
     {
       id: 2,
       title: "Financial Services Platform",
       category: "Software Development",
-      image: "/finance.jpg",
+      image: "/chilli.png",
     },
     {
       id: 3,
       title: "Healthcare Data Analytics",
       category: "Data Analytics",
-      image: "/health.jpg",
+      image: "/taxall23.png",
     },
   ]
 
@@ -167,12 +168,7 @@ export default function Home() {
                   Transforming Business Through{" "}
                   <span className="typing-text-container">
                     <TypingEffect
-                      texts={[
-                        "Advanced Technology",
-                        "Digital Innovation",
-                        "Cloud Solutions",
-                        "AI Integration",
-                      ]}
+                      texts={["Advanced Technology", "Digital Innovation", "Cloud Solutions", "AI Integration"]}
                       typingSpeed={80}
                       deletingSpeed={40}
                       delayBetweenTexts={2000}
@@ -303,7 +299,7 @@ export default function Home() {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
                 <Zap className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">Agile Methodology</h3>
+              <h3 className="mt-4 text-xl font-bold text-white">On Time Delivery</h3>
               <p className="mt-2 text-gray-400">
                 We employ agile development practices to deliver solutions quickly and efficiently.
               </p>
@@ -326,6 +322,33 @@ export default function Home() {
               <h3 className="mt-4 text-xl font-bold text-white">Quality Assurance</h3>
               <p className="mt-2 text-gray-400">
                 Rigorous testing and quality control processes ensure reliable, high-performance solutions.
+              </p>
+            </AnimatedCard>
+            <AnimatedCard glowOnHover tiltEffect>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
+                <Globe className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-xl font-bold text-white">Global Expertise</h3>
+              <p className="mt-2 text-gray-400">
+                Our international team brings diverse perspectives and expertise from around the world.
+              </p>
+            </AnimatedCard>
+            <AnimatedCard glowOnHover tiltEffect>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
+                <Users className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-xl font-bold text-white">Client-Centric Approach</h3>
+              <p className="mt-2 text-gray-400">
+                We prioritize your business goals and tailor our solutions to meet your specific needs.
+              </p>
+            </AnimatedCard>
+            <AnimatedCard glowOnHover tiltEffect>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
+                <Shield className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-xl font-bold text-white">Security First</h3>
+              <p className="mt-2 text-gray-400">
+                We implement robust security measures in all our solutions to protect your valuable data.
               </p>
             </AnimatedCard>
           </div>
@@ -380,7 +403,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <Badge variant="glow" className="px-3 py-1 text-sm">
+              <Badge variant="glow" className="px-3 py-1 text-sm lg:m-5">
                 Our Technology Stack
               </Badge>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -401,11 +424,9 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <Badge variant="premium" className="px-3 py-1 text-sm">
-                Case Studies
+                Our Products
               </Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Success Stories
-              </h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Success Stories</h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 See how we've helped organizations achieve their technology goals.
               </p>
@@ -445,7 +466,7 @@ export default function Home() {
                 variant="outline"
                 className="border-gray-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 px-8"
               >
-                View All Case Studies
+                View Projects
                 <ArrowRight className="ml-2 h-4 w-4" />
               </GlowingButton>
             </Link>
@@ -454,62 +475,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="w-full py-20 bg-gray-50">
+      <section className="w-full py-20 bg-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <Badge variant="premium" className="px-3 py-1 text-sm">
-                Testimonials
-              </Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Client Feedback
-              </h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                What our clients say about working with us.
-              </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-2">
-            {[
-              {
-                name: "Alex Johnson",
-                company: "TechCorp",
-                quote:
-                  "Nikosta transformed our legacy systems into a modern, scalable architecture. Their expertise in cloud migration saved us significant operational costs while improving performance.",
-              },
-              {
-                name: "Sarah Williams",
-                company: "FinTech Innovations",
-                quote:
-                  "The cybersecurity solutions implemented by Nikosta have significantly strengthened our data protection framework. Their team's proactive approach to security has been invaluable.",
-              },
-            ].map((testimonial, index) => (
-              <AnimatedCard key={index} glowOnHover tiltEffect>
-                <div>
-                  <div className="flex space-x-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="h-5 w-5 text-yellow-500"
-                      >
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="mb-6 italic text-gray-300 leading-relaxed">"{testimonial.quote}"</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-white">{testimonial.name}</p>
-                  <p className="text-sm text-gray-400">{testimonial.company}</p>
-                </div>
-              </AnimatedCard>
-            ))}
-          </div>
+
+          <TestimonialCarousel />
         </div>
       </section>
 
