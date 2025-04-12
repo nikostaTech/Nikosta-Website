@@ -164,9 +164,11 @@ export default function Home() {
                 <Badge variant="premium" className="px-3 py-1 text-sm">
                   Next-Generation Technology Solutions
                 </Badge>
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl text-white">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl  text-white">
                   Transforming Business Through{" "}
-                  <span className="typing-text-container">
+                  
+                </h1>
+                <span className="typing-text-container  text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl">
                     <TypingEffect
                       texts={["Advanced Technology", "Digital Innovation", "Cloud Solutions", "AI Integration"]}
                       typingSpeed={80}
@@ -175,7 +177,6 @@ export default function Home() {
                       className="text-gradient"
                     />
                   </span>
-                </h1>
                 <p className="max-w-[600px] text-gray-400 md:text-xl">
                   Nikosta delivers cutting-edge technology services that drive innovation, efficiency, and growth for
                   enterprises worldwide.

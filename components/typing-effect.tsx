@@ -22,29 +22,37 @@ export function TypingEffect({
   const [isDeleting, setIsDeleting] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
 
-  // Use refs to avoid stale closures in the timeout
+  // Refs to avoid stale closure issues in timer callbacks
   const indexRef = useRef(currentIndex)
   const isDeletingRef = useRef(isDeleting)
   const isPausedRef = useRef(isPaused)
+  const displayRef = useRef(displayText)
 
-  // Update refs when state changes
+  // Update refs whenever state changes
   useEffect(() => {
     indexRef.current = currentIndex
+  }, [currentIndex])
+
+  useEffect(() => {
     isDeletingRef.current = isDeleting
+  }, [isDeleting])
+
+  useEffect(() => {
     isPausedRef.current = isPaused
-  }, [currentIndex, isDeleting, isPaused])
+  }, [isPaused])
+
+  useEffect(() => {
+    displayRef.current = displayText
+  }, [displayText])
 
   useEffect(() => {
     if (!texts || texts.length === 0) return
-
-    const currentText = texts[currentIndex]
-    if (!currentText) return
 
     let timeoutId: NodeJS.Timeout
 
     const tick = () => {
       if (isPausedRef.current) {
-        // If paused, wait and then continue
+        // When paused, wait a bit and continue
         timeoutId = setTimeout(() => {
           setIsPaused(false)
           tick()
@@ -52,24 +60,26 @@ export function TypingEffect({
         return
       }
 
-      if (isDeletingRef.current) {
-        // Deleting text
-        setDisplayText((prev) => prev.substring(0, prev.length - 1))
+      const fullText = texts[indexRef.current]
 
-        if (displayText.length <= 1) {
+      if (isDeletingRef.current) {
+        // Compute the new text by removing one character
+        const newText = fullText.substring(0, displayRef.current.length - 1)
+        setDisplayText(newText)
+        // If no text remains, move to the next text
+        if (newText === "") {
           setIsDeleting(false)
-          // Move to next text
           setCurrentIndex((prev) => (prev + 1) % texts.length)
+          timeoutId = setTimeout(tick, typingSpeed)
         } else {
           timeoutId = setTimeout(tick, deletingSpeed)
         }
       } else {
-        // Typing text
-        const fullText = texts[indexRef.current]
-        setDisplayText((prev) => fullText.substring(0, prev.length + 1))
-
-        if (displayText.length >= fullText.length - 1) {
-          // Finished typing, pause before deleting
+        // Compute the new text by adding one character
+        const newText = fullText.substring(0, displayRef.current.length + 1)
+        setDisplayText(newText)
+        // If full text is typed, pause before starting deletion
+        if (newText === fullText) {
           setIsPaused(true)
           timeoutId = setTimeout(() => {
             setIsPaused(false)
@@ -85,7 +95,7 @@ export function TypingEffect({
     timeoutId = setTimeout(tick, typingSpeed)
 
     return () => clearTimeout(timeoutId)
-  }, [texts, currentIndex, isDeleting, isPaused, displayText, typingSpeed, deletingSpeed, delayBetweenTexts])
+  }, [texts, typingSpeed, deletingSpeed, delayBetweenTexts])
 
   return (
     <span className={className}>
@@ -94,4 +104,3 @@ export function TypingEffect({
     </span>
   )
 }
-

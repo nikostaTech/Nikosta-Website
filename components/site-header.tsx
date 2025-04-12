@@ -109,7 +109,7 @@ export function SiteHeader() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium text-white/80 transition-colors hover:text-white"
+                  className="text-sm font-bold text-white/80 transition-colors hover:text-white"
                 >
                   {item.name}
                 </Link>
