@@ -225,6 +225,7 @@ export default function Home() {
       </section>
 
       <IndustriesSection />
+      
 
     
       {/* Why Choose Us Section */}
@@ -346,6 +347,65 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="w-full py-20 bg-white">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <Badge variant="premium" className="px-3 py-1 text-sm">
+                Our Products
+              </Badge>
+              
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Success <AnimatedGradientText text="Stories" />
+              </h2>
+              
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                See how we've helped organizations achieve their technology goals.
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+            {caseStudies.map((study) => (
+              <Link
+                href={`/portfolio/${study.id}`}
+                key={study.id}
+                className="group relative overflow-hidden rounded-lg shadow-lg transition-all hover:shadow-xl"
+              >
+                <div className="aspect-video overflow-hidden">
+                  <Image
+                    src={study.image || "/placeholder.svg"}
+                    alt={study.title}
+                    width={600}
+                    height={400}
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 transition-all duration-300 translate-y-4 group-hover:translate-y-0 group-hover:opacity-100">
+                  <h3 className="text-xl font-bold">{study.title}</h3>
+                  <p className="text-sm text-gray-300 mt-2">{study.category}</p>
+                  <div className="mt-4 flex items-center text-primary-400 font-medium">
+                    View Case Study
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <Link href="/portfolio">
+              <GlowingButton
+                variant="outline"
+                className="border-gray-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300 px-8"
+              >
+                View Projects
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </GlowingButton>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       
 
       {/* Tech Stack Section */}
@@ -427,7 +487,7 @@ export default function Home() {
 
 
       {/* Case Studies Section */}
-      <section className="w-full py-20 bg-white">
+      {/* <section className="w-full py-20 bg-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -484,7 +544,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
       <section className="w-full py-20 bg-white">
