@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PremiumBackButton } from "@/components/premium-back-button"
 
 export default function ServicesPage() {
   const services = [
@@ -65,8 +66,11 @@ export default function ServicesPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Premium Back Button */}
+      <PremiumBackButton href="/" />
+
       {/* Hero Section - Added extra padding at the top for header space */}
-      <section className="w-full pt-24 pb-12 sm:pt-28 md:pt-32 md:pb-24 lg:py-32 bg-black text-white">
+      <section className="w-full mt-16 pt-24 pb-12 sm:pt-28 md:pt-32 md:pb-24 lg:py-32 bg-gradient-to-b from-black via-primary-900 to-secondary-800 text-gray-300">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">

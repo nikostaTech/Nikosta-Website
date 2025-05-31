@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { linkSync } from "fs"
 
 // Define the expertise items with image paths
 const expertiseItems = [
@@ -11,6 +12,7 @@ const expertiseItems = [
     description: "Custom software solutions tailored to your business needs.",
     imagePath: "/soft.jpg", // You can replace with your actual image paths
     link: "/services#software-development",
+    
   },
   {
     id: "cloud-solutions",
@@ -37,7 +39,7 @@ const expertiseItems = [
 
 export function ExpertiseSection() {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-gray-50">
+    <section className="w-full py-16 md:py-24 lg:py-32 bg-gray-800">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">

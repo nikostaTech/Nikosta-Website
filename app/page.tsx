@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
@@ -30,6 +31,7 @@ import { TechStackCarousel } from "@/components/tech-stack-carousel"
 import { TypingEffect } from "@/components/typing-effect"
 import { EnhancedTechCard } from "@/components/enhanced-tech-card"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
+import { IndustriesSection } from "@/components/industries-section"
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -127,20 +129,20 @@ export default function Home() {
   const caseStudies = [
     {
       id: 1,
-      title: "Enterprise Cloud Migration",
-      category: "Cloud Solutions",
+      title: "MAA AHILYA BAI HOSPITAL",
+      category: "Medical",
       image: "/hospital.png",
     },
     {
       id: 2,
-      title: "Financial Services Platform",
-      category: "Software Development",
+       title: "Chilli Restaurant",
+      category: "Restaurant website",
       image: "/chilli.png",
     },
     {
       id: 3,
-      title: "Healthcare Data Analytics",
-      category: "Data Analytics",
+      title: "Taxall",
+      category: "Finance Solutions",
       image: "/taxall23.png",
     },
   ]
@@ -222,63 +224,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section
-        ref={expertiseRef}
-        id="expertise-section"
-        className="w-full py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
-      >
-        {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute -top-[300px] -right-[300px] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary-500/5 to-secondary-500/5 blur-3xl"></div>
-          <div className="absolute -bottom-[300px] -left-[300px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-primary-500/5 to-secondary-500/5 blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_70%)]"></div>
-        </div>
+      <IndustriesSection />
 
-        <div className="container relative z-10 px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
-            <Badge variant="premium" className="px-3 py-1 text-sm mb-4">
-              Our Solutions
-            </Badge>
-            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4">
-              Technology <AnimatedGradientText text="Expertise" />
-            </h2>
-            <p className="max-w-[800px] text-gray-600 md:text-xl/relaxed lg:text-xl/relaxed">
-              We provide comprehensive technology solutions to help your business thrive in the digital era.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
-            {expertiseItems.map((item, index) => (
-              <EnhancedTechCard
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
-                features={item.features}
-                colorClass={item.color}
-                iconColorClass={item.iconColor}
-                bgGradientClass={item.bgGradient}
-                delay={index * 0.1}
-                link={item.link}
-              />
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-16">
-            <Link href="/services">
-              <Button className="group relative overflow-hidden rounded-full bg-black px-8 py-6 text-lg text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20">
-                <span className="relative z-10 flex items-center">
-                  View All Solutions
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-                <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
+    
       {/* Why Choose Us Section */}
       <ParallaxSection className="w-full py-20 bg-black text-white">
         <div className="container px-4 md:px-6">
@@ -398,6 +346,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
 
       {/* Tech Stack Section */}
       <section className="w-full py-20 bg-black text-white">
@@ -418,6 +367,64 @@ export default function Home() {
           <TechStackCarousel technologies={technologies} />
         </div>
       </section>
+     
+       {/* Services Section */}
+       <section
+        ref={expertiseRef}
+        id="expertise-section"
+        className="w-full bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+      >
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-[300px] -right-[300px] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary-500/5 to-secondary-500/5 blur-3xl"></div>
+          <div className="absolute -bottom-[300px] -left-[300px] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-primary-500/5 to-secondary-500/5 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_70%)]"></div>
+        </div>
+
+        <div className="container relative z-10 px-4 py-24 bg-gray-100 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+            <Badge variant="premium" className="px-3 py-1 text-sm mb-4">
+              Our Solutions
+            </Badge>
+            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4">
+              Technology <AnimatedGradientText text="Expertise" />
+            </h2>
+            <p className="max-w-[800px] text-gray-600 md:text-xl/relaxed lg:text-xl/relaxed">
+              We provide comprehensive technology solutions to help your business thrive in the digital era.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+            {expertiseItems.map((item, index) => (
+              <EnhancedTechCard
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                features={item.features}
+                colorClass={item.color}
+                iconColorClass={item.iconColor}
+                bgGradientClass={item.bgGradient}
+                delay={index * 0.1}
+                link={item.link}
+              />
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-16">
+            <Link href="/services">
+              <Button className="group relative overflow-hidden rounded-full bg-black px-8 py-6 text-lg text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20">
+                <span className="relative z-10 flex items-center">
+                  View All Solutions
+                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
 
       {/* Case Studies Section */}
       <section className="w-full py-20 bg-white">
@@ -427,7 +434,11 @@ export default function Home() {
               <Badge variant="premium" className="px-3 py-1 text-sm">
                 Our Products
               </Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Success Stories</h2>
+              
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Success <AnimatedGradientText text="Stories" />
+              </h2>
+              
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 See how we've helped organizations achieve their technology goals.
               </p>
@@ -486,6 +497,7 @@ export default function Home() {
           <TestimonialCarousel />
         </div>
       </section>
+     
 
       {/* CTA Section */}
       <section className="w-full py-20 bg-black text-white">
@@ -511,6 +523,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
     </div>
+    
   )
 }

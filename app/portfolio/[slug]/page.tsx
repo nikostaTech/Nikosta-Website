@@ -136,7 +136,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 bg-gray-50">
+      <section className="w-full pt-20 py-12 md:py-24 bg-gray-50">
         <div className="container px-4 md:px-6">
           <Link href="/portfolio">
             <Button variant="ghost" className="mb-6">

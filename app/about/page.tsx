@@ -3,51 +3,55 @@ import Link from "next/link"
 import { ArrowRight, Award, Globe, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { OurStorySection } from "@/components/our-story-section"
+import { PremiumBackButton } from "@/components/premium-back-button"
 
 export default function AboutPage() {
   const team = [
     {
-      "name": "Ashish Raj",
-      "position": "Software Developer",
-      "bio": "Ashish is a dedicated Software Developer committed to building innovative and efficient software solutions.",
-      "image": "/ashu.png?height=400&width=400&text=John"
+      name: "Ashish Raj",
+      position: "Software Developer",
+      bio: "Ashish is a dedicated Software Developer committed to building innovative and efficient software solutions.",
+      image: "/ashu.png?height=400&width=400&text=John",
     },
     {
-      "name": "Aman Kumar Karan",
-      "position": "Devops Engineer",
-      "bio": "Aman is a dedicated DevOps Engineer committed to streamlining processes and optimizing system performance.",
-      "image": "/amaan.png?height=500&width=400&text=Sarah"
+      name: "Aman Kumar Karan",
+      position: "Devops Engineer",
+      bio: "Aman is a dedicated DevOps Engineer committed to streamlining processes and optimizing system performance.",
+      image: "/amaan.png?height=500&width=400&text=Sarah",
     },
     {
-      "name": "Amit Aryan",
-      "position": "ServiceNow Developer",
-      "bio": "Amit is a dedicated ServiceNow Developer passionate about delivering innovative automation and workflow solutions.",
-      "image": "/amit.jpeg"
+      name: "Amit Aryan",
+      position: "ServiceNow Developer",
+      bio: "Amit is a dedicated ServiceNow Developer passionate about delivering innovative automation and workflow solutions.",
+      image: "/amit.jpeg",
     },
     {
-      "name": "Vishal Yadav",
-      "position": "Java Developer",
-      "bio": "Vishal is a dedicated Java Developer focused on crafting efficient and robust applications through innovative coding practices.",
-      "image": "/vishal.jpg?height=400&width=400&text=Sarah"
+      name: "Vishal Yadav",
+      position: "Java Developer",
+      bio: "Vishal is a dedicated Java Developer focused on crafting efficient and robust applications through innovative coding practices.",
+      image: "/vishal.jpg?height=400&width=400&text=Sarah",
     },
     {
-      "name": "Sunil Kumar",
-      "position": "Software Developer",
-      "bio": "Sunil is an innovative Software Developer focused on creating robust and efficient software solutions.",
-      "image": "/sunil.jpeg?height=400&width=400&text=Michael"
+      name: "Sunil Kumar",
+      position: "Software Developer",
+      bio: "Sunil is an innovative Software Developer focused on creating robust and efficient software solutions.",
+      image: "/sunil.jpeg?height=400&width=400&text=Michael",
     },
     {
-      "name": "Ashmit Raj",
-      "position": "Full Stack Developer ",
-      "bio": "Ashmit Raj is a dedicated Full Stack Developer skilled at bridging front-end and back-end technologies to create dynamic and efficient web applications.",
-      "image": "/Ashmit1.png?height=400&width=400&text=Emily"
-    }
+      name: "Ashmit Raj",
+      position: "Full Stack Developer ",
+      bio: "Ashmit Raj is a dedicated Full Stack Developer skilled at bridging front-end and back-end technologies to create dynamic and efficient web applications.",
+      image: "/Ashmit1.png?height=400&width=400&text=Emily",
+    },
   ]
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Premium Back Button */}
+      <PremiumBackButton href="/" />
+
       {/* Hero Section - Centered heading and modified layout */}
-      <section className="w-full pt-24 pb-12 sm:pt-28 md:pt-32 md:pb-24 lg:py-32 bg-black text-white">
+      <section className="w-full mt-4 pt-24 pb-12 sm:pt-28 md:pt-32 md:pb-24 lg:py-32 bg-gradient-to-b from-black via-primary-900 to-secondary-800 text-gray-300">
         <div className="container px-4 md:px-6">
           {/* Centered heading and description */}
           <div className="flex flex-col items-center justify-center space-y-6 text-center mb-12">
@@ -122,9 +126,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6">
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold">Our Statistics</h2>
-            <p className="text-lg text-gray-400 mt-2">
-              A snapshot of our achievements and impact in the industry.
-            </p>
+            <p className="text-lg text-gray-400 mt-2">A snapshot of our achievements and impact in the industry.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="flex flex-col items-center justify-center space-y-2 rounded-lg border border-gray-800 bg-gray-950 p-8">
