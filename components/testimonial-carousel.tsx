@@ -22,14 +22,13 @@ const testimonials: TestimonialProps[] = [
   {
     image: "/barub.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     testimonial:
-    "Nikosta ke data analytics solutions ne hamare patient outcomes ko improve kiya aur operations optimize kiye.",
+      "Nikosta ke data analytics solutions ne hamare patient outcomes ko improve kiya aur operations optimize kiye.",
     name: "Suman Gaurav",
     role: "CTO",
     company: "Chilly Restaurant",
   },
   {
-    image:
-      "/aakash.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    image: "/aakash.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     testimonial:
       "The custom software solution developed by Nikosta has streamlined our operations and increased productivity by 35%. Their team was professional and responsive throughout the project.",
     name: "Aakash Trivedi",
@@ -61,8 +60,7 @@ const testimonials: TestimonialProps[] = [
     company: "Manglam Events ",
   },
   {
-    image:
-      "/Priyadi.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    image: "/Priyadi.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     testimonial:
       "Nikosta's AI implementation has revolutionized our customer service operations. Their team's expertise in machine learning and natural language processing is truly impressive.",
     name: "Priya Upadhyay",
@@ -143,12 +141,12 @@ export function TestimonialCarousel() {
         {/* Heading Section */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
-          <Badge variant="premium" className="px-3 py-1 text-sm">
-                Testimonials
-              </Badge>
+            <Badge variant="premium" className="px-3 py-1 text-sm">
+              Testimonials
+            </Badge>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                What Our <AnimatedGradientText text="Clients Say" />
-              </h2>
+              What Our <AnimatedGradientText text="Clients Say" />
+            </h2>
             <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Trusted by businesses worldwide to deliver exceptional technology solutions
             </p>
@@ -197,9 +195,7 @@ export function TestimonialCarousel() {
                           </div>
                           <div>
                             <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                            <p className="text-primary-600 text-sm">
-                              {testimonial.role}, {testimonial.company}
-                            </p>
+                            <p className="text-primary-600 text-sm">{testimonial.company}</p>
                             <div className="flex mt-1">
                               {[...Array(5)].map((_, i) => (
                                 <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />

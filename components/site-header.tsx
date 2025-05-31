@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
@@ -10,6 +11,8 @@ import { cn } from "@/lib/utils"
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+
+  const pathname = usePathname()
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -105,15 +108,23 @@ export function SiteHeader() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-bold text-white/80 transition-colors hover:text-white"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "text-sm font-bold transition-all duration-200",
+                      isActive
+                        ? "text-white bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent shadow-lg"
+                        : "text-white/80 hover:text-white",
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              })}
               <Link href="/contact">
                 <Button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 shadow-lg hover:shadow-primary-500/20 text-xs sm:text-sm whitespace-nowrap">
                   Get Started
@@ -181,16 +192,24 @@ export function SiteHeader() {
             style={{ backgroundColor: "#000000" }}
           >
             <nav className="flex flex-col space-y-6 flex-grow">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-xl sm:text-2xl font-medium text-white/80 transition-colors hover:text-white tracking-tight"
-                  onClick={closeMenu}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href))
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "text-xl sm:text-2xl font-medium transition-all duration-200 tracking-tight",
+                      isActive
+                        ? "text-white bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent"
+                        : "text-white/80 hover:text-white",
+                    )}
+                    onClick={closeMenu}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              })}
             </nav>
             <div className="mt-auto py-6" style={{ backgroundColor: "#000000" }}>
               <Link href="/contact" onClick={closeMenu}>
