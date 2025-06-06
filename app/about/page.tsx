@@ -19,12 +19,7 @@ export default function AboutPage() {
       bio: "Aman is a dedicated DevOps Engineer committed to streamlining processes and optimizing system performance.",
       image: "/amaan.png?height=500&width=400&text=Sarah",
     },
-    {
-      name: "Amit Aryan",
-      position: "ServiceNow Developer",
-      bio: "Amit is a dedicated ServiceNow Developer passionate about delivering innovative automation and workflow solutions.",
-      image: "/amit.jpeg",
-    },
+    
     {
       name: "Vishal Yadav",
       position: "Java Developer",
@@ -37,12 +32,7 @@ export default function AboutPage() {
       bio: "Sunil is an innovative Software Developer focused on creating robust and efficient software solutions.",
       image: "/sunil.jpeg?height=400&width=400&text=Michael",
     },
-    {
-      name: "Ashmit Raj",
-      position: "Full Stack Developer ",
-      bio: "Ashmit Raj is a dedicated Full Stack Developer skilled at bridging front-end and back-end technologies to create dynamic and efficient web applications.",
-      image: "/Ashmit1.png?height=400&width=400&text=Emily",
-    },
+    
   ]
 
   return (
