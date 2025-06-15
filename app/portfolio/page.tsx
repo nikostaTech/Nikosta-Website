@@ -1,6 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PremiumBackButton } from "@/components/premium-back-button"
 
@@ -14,6 +16,7 @@ export default function PortfolioPage() {
       description:
         "Taxall is an AI-powered platform offering easy tax filing, smart calculations, chatbot support, secure access, and report generation.",
       image: "/taxall23.png",
+      websiteUrl: "https://taxall.co.in",
     },
     {
       id: 2,
@@ -22,6 +25,7 @@ export default function PortfolioPage() {
       description:
         "A Financial Services Institute offering expert solutions in Stock market, investment, and compliance through smart technology, personalized advice, and secure platforms.",
       image: "/tradeneeti.png",
+      websiteUrl: "https://tradeneeti.com",
     },
     {
       id: 3,
@@ -30,6 +34,7 @@ export default function PortfolioPage() {
       description:
         "A cozy restaurant serving delicious, freshly prepared meals with warm hospitality, vibrant ambiance, and a menu inspired by global flavors.",
       image: "/chilli.png",
+      websiteUrl: "",
     },
     {
       id: 4,
@@ -38,6 +43,7 @@ export default function PortfolioPage() {
       description:
         "Website for Maa Ahilya Bai Hospital offering services, specialties, emergency care, and patient-friendly information access.",
       image: "/hospital.png",
+      websiteUrl: "https://maaahilyabai.com/",
     },
     {
       id: 5,
@@ -46,6 +52,7 @@ export default function PortfolioPage() {
       description:
         "Developed a machine learning-based skin cancer classification system to assist hospitals in early detection using medical image analysis.",
       image: "/cancerdet copy.png",
+      websiteUrl: "",
     },
   ]
 
@@ -73,8 +80,7 @@ export default function PortfolioPage() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <Link
-                href={`/portfolio/${project.id}`}
+              <div
                 key={project.id}
                 className="group relative flex flex-col overflow-hidden rounded-lg border shadow-sm transition-all hover:shadow-lg"
               >
@@ -88,15 +94,34 @@ export default function PortfolioPage() {
                   />
                 </div>
                 <div className="flex flex-col space-y-2 p-4">
-                  <div className="inline-block rounded-full bg-gray-100 px-3 py-1 text-xs">{project.category}</div>
+                  <div className="inline-block rounded-full bg-gray-100 px-3 py-1 text-xs w-fit">
+                    {project.category}
+                  </div>
                   <h3 className="text-xl font-bold">{project.title}</h3>
                   <p className="text-sm text-gray-500">{project.description}</p>
-                  <div className="flex items-center pt-2 text-sm font-medium">
-                    View Case Study
-                    <ArrowRight className="ml-1 h-4 w-4" />
+
+                  {/* Action buttons */}
+                  <div className="flex flex-col gap-2 pt-2">
+                    <Link
+                      href={`/portfolio/${project.id}`}
+                      className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                    >
+                      View Case Study
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Link>
+
+                    <a
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-medium text-green-600 hover:text-green-700 transition-colors"
+                    >
+                      <ExternalLink className="mr-1 h-4 w-4" />
+                      Visit Live Website
+                    </a>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

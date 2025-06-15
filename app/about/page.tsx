@@ -11,7 +11,7 @@ export default function AboutPage() {
       name: "Ashish Raj",
       position: "Software Developer",
       bio: "Ashish is a dedicated Software Developer committed to building innovative and efficient software solutions.",
-      image: "/ashu.png?height=400&width=400&text=John",
+      image: "/ashish cy.png?height=400&width=400&text=John",
     },
     {
       name: "Aman Kumar Karan",
@@ -31,6 +31,12 @@ export default function AboutPage() {
       position: "Software Developer",
       bio: "Sunil is an innovative Software Developer focused on creating robust and efficient software solutions.",
       image: "/sunil.jpeg?height=400&width=400&text=Michael",
+    },
+    {
+      name: "Ashish Gupta",
+      position: "UI/UX Designer",
+      bio: "Ashish Gupta is a UI/UX Designer who creates easy-to-use and good-looking designs for websites and apps.",
+      image: "/Industries/ashishGupta-1.png",
     },
     
   ]

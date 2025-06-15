@@ -1,13 +1,13 @@
 "use client"
 
-import React, { use } from "react"
+import { use } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 // Sample list of projects.
-// In a real application, you’d fetch this data from an API or database.
+// In a real application, you'd fetch this data from an API or database.
 const projects = [
   {
     id: "1",
@@ -15,6 +15,7 @@ const projects = [
     category: "FinTech / AI Integration",
     client: "General Public & Businesses",
     year: "2024",
+    websiteUrl: "https://www.taxall.co.in/",
     description:
       "Developed an AI-powered tax solution platform to simplify income tax filing with automation, smart reports, and chatbot support.",
     challenge:
@@ -24,18 +25,15 @@ const projects = [
     results:
       "Improved user experience and accuracy in tax filing. Enabled seamless, quick, and reliable tax report generation and assistance.",
     technologies: ["React.js", "Spring Boot", "Java", "AI Chatbot", "MySQL"],
-    images: [
-      "/taxall23.png",
-      "/taxallpro.png",
-      "/Taxall04.png",
-    ],
-  },  
+    images: ["/taxall23.png", "/taxallpro.png", "/Taxall04.png"],
+  },
   {
     id: "2",
     title: "Tradeneeti - Stock Market Training Institute",
     category: "Finance / Education",
     client: "Aspiring Traders & Investors",
     year: "2024",
+    websiteUrl: "https://tradeneeti.com/",
     description:
       "Tradeneeti is a financial stock market institute offering expert-led courses, real-time trading insights, and practical training.",
     challenge:
@@ -45,18 +43,15 @@ const projects = [
     results:
       "Increased student engagement, enhanced trading knowledge, and improved confidence among learners entering the financial markets.",
     technologies: ["React.js", "Next.js", "Node.js", "MongoDB", "Trading APIs"],
-    images: [
-      "/tradeneeti.png",
-      "/trade.png",
-      "/trade2.png",
-    ],
-  },  
+    images: ["/tradeneeti.png", "/trade.png", "/trade2.png"],
+  },
   {
     id: "3",
     title: "Chilli Restaurant - Dining Experience",
     category: "Restaurant",
     client: "Local Food Lovers",
     year: "2024",
+    websiteUrl: "",
     description:
       "Chilli Restaurant is a vibrant dining spot located in Patna, Bihar, known for its delicious multi-cuisine menu and warm ambiance.",
     challenge:
@@ -66,18 +61,15 @@ const projects = [
     results:
       "The restaurant saw increased footfall, improved customer engagement, and enhanced visibility in the Patna food scene.",
     technologies: ["HTML", "CSS", "JavaScript", "React.js", "Firebase"],
-    images: [
-      "/chilli.png",
-      "/chilli02.png",
-      "/chilli03.png",
-    ],
-  },  
+    images: ["/chilli.png", "/chilli02.png", "/chilli03.png"],
+  },
   {
     id: "4",
     title: "MAA AHILYA BAI HOSPITAL - Healthcare Facility",
     category: "Hospital / Healthcare",
     client: "Patients & Local Community",
     year: "2024",
+    websiteUrl: "https://maaahilyabai.com/",
     description:
       "MAA AHILYA BAI HOSPITAL is a trusted healthcare facility in Kanpur Nagar, offering quality medical services and 24/7 emergency care.",
     challenge:
@@ -87,18 +79,15 @@ const projects = [
     results:
       "The hospital saw better patient communication, improved online visibility, and smoother operations for appointments and information access.",
     technologies: ["React.js", "HTML", "CSS", "JavaScript", "Firebase"],
-    images: [
-      "/hospital.png",
-      "/hospital022.png",
-      "/hospital033.png",
-    ],
-  },  
+    images: ["/hospital.png", "/hospital022.png", "/hospital033.png"],
+  },
   {
     id: "5",
     title: "Skin Cancer Classification System",
     category: "AI / Healthcare",
     client: "Hospitals & Dermatology Clinics",
     year: "2024",
+    websiteUrl: "",
     description:
       "Developed a machine learning-based system for early detection of skin cancer through medical image classification with 93% accuracy.",
     challenge:
@@ -108,12 +97,8 @@ const projects = [
     results:
       "Enabled early diagnosis, reduced workload on doctors, and improved treatment outcomes through AI-powered decision support.",
     technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "Streamlit"],
-    images: [
-      "/cancerdet.png",
-      "/cancer2.png",
-      "/cancer3.png",
-    ],
-  },  
+    images: ["/cancerdet.png", "/cancer2.png", "/cancer3.png"],
+  },
 ]
 
 export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -147,9 +132,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  {project.title}
-                </h1>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{project.title}</h1>
                 <p className="text-gray-500">{project.category}</p>
               </div>
               <div className="space-y-2">
@@ -163,6 +146,19 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
                 </div>
               </div>
               <p className="text-gray-700">{project.description}</p>
+
+              {/* Visit Website Button */}
+              <div className="pt-4">
+                <a
+                  href={project.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-sm font-medium text-white shadow transition-colors hover:bg-green-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-950"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Visit Live Website
+                </a>
+              </div>
             </div>
             <div className="flex items-center justify-center">
               <Image
@@ -224,6 +220,19 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
                   ))}
                 </div>
               </div>
+
+              {/* Another Visit Website Button */}
+              <div className="pt-4">
+                <a
+                  href={project.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md border border-green-600 bg-transparent px-6 py-3 text-sm font-medium text-green-600 shadow-sm transition-colors hover:bg-green-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-950"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Explore Live Project
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -233,9 +242,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
       <section className="w-full py-12 md:py-24 bg-gray-50">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-              Interested in working with us?
-            </h2>
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Interested in working with us?</h2>
             <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl">
               Let's discuss your project and see how we can help bring your vision to life.
             </p>

@@ -24,7 +24,7 @@ const testimonials: TestimonialProps[] = [
   {
     image: "/barub.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     testimonial:
-      "Nikosta ke data analytics solutions ne hamare patient outcomes ko improve kiya aur operations optimize kiye.",
+      "Very good work! They made my website fast and easy to use. I am very happy with their service. ",
     name: "Suman Gaurav",
     role: "CTO",
     company: "Chilly Restaurant",
@@ -64,7 +64,7 @@ const testimonials: TestimonialProps[] = [
   {
     image: "/Priyadi.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     testimonial:
-      "Nikosta's AI implementation has revolutionized our customer service operations. Their team's expertise in machine learning and natural language processing is truly impressive.",
+      "Great team! They helped me a lot. My online shop is working very well now. Thank you so much!",
     name: "Priya Upadhyay",
     role: "CEO",
     company: "AI Solutions",
