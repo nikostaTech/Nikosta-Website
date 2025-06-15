@@ -109,14 +109,14 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-black" />
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-sm text-gray-500">contact@nikosta.com</p>
+                    <p className="text-sm text-gray-500">admin@nikosta.in</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Phone className="h-6 w-6 text-black" />
                   <div>
                     <h3 className="font-medium">Phone</h3>
-                    <p className="text-sm text-gray-500">+91 9560603635</p>
+                    <p className="text-sm text-gray-500">+91 9304163735</p>
                   </div>
                 </div>
               </div>

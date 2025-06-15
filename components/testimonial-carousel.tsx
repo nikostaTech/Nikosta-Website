@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useEffect, useState, useCallback } from "react"
 import Image from "next/image"
 import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react"
@@ -73,6 +75,7 @@ export function TestimonialCarousel() {
   const [api, setApi] = useState<any>()
   const [current, setCurrent] = useState(0)
   const [count, setCount] = useState(0)
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false)
 
   // Safely determine items per view based on screen size
   const [itemsPerView, setItemsPerView] = useState(3)
@@ -118,22 +121,59 @@ export function TestimonialCarousel() {
     }
   }, [api])
 
+  // Simple autoplay with pause functionality
   useEffect(() => {
-    if (!api) return
+    if (!api || isAutoplayPaused) return
 
-    const autoplayInterval = setInterval(() => {
+    const interval = setInterval(() => {
       api.scrollNext()
     }, 3000)
 
-    return () => {
-      clearInterval(autoplayInterval)
-    }
-  }, [api])
+    return () => clearInterval(interval)
+  }, [api, isAutoplayPaused])
+
+  // Function to pause autoplay temporarily
+  const pauseAutoplay = useCallback(() => {
+    setIsAutoplayPaused(true)
+    // Resume after 5 seconds
+    setTimeout(() => {
+      setIsAutoplayPaused(false)
+    }, 9000)
+  }, [])
 
   // Navigation functions
-  const scrollPrev = useCallback(() => api?.scrollPrev(), [api])
-  const scrollNext = useCallback(() => api?.scrollNext(), [api])
-  const scrollTo = useCallback((index: number) => api?.scrollTo(index), [api])
+  const scrollPrev = useCallback(() => {
+    if (api) {
+      api.scrollPrev()
+      pauseAutoplay()
+    }
+  }, [api, pauseAutoplay])
+
+  const scrollNext = useCallback(() => {
+    if (api) {
+      api.scrollNext()
+      pauseAutoplay()
+    }
+  }, [api, pauseAutoplay])
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (api) {
+        api.scrollTo(index)
+        pauseAutoplay()
+      }
+    },
+    [api, pauseAutoplay],
+  )
+
+  const handleCardClick = useCallback(
+    (index: number, event: React.MouseEvent) => {
+      event.preventDefault()
+      event.stopPropagation()
+      scrollTo(index)
+    },
+    [scrollTo],
+  )
 
   return (
     <section className="w-full py-20 bg-[#f8f8f5]">
@@ -177,11 +217,12 @@ export function TestimonialCarousel() {
                 >
                   <div className="h-full p-1">
                     <Card
-                      className={`h-full rounded-xl overflow-hidden transition-all duration-500 ease-in-out border-0 ${
+                      className={`h-full rounded-xl overflow-hidden transition-all duration-500 ease-in-out border-0 cursor-pointer select-none ${
                         current === index
                           ? "opacity-100 scale-100 z-10 shadow-[0_10px_40px_rgba(0,0,0,0.08)]"
-                          : "opacity-30 scale-[0.92] z-0"
+                          : "opacity-30 scale-[0.92] z-0 hover:opacity-50 hover:scale-95"
                       }`}
+                      onClick={(e) => handleCardClick(index, e)}
                     >
                       <CardContent className="p-6 h-full flex flex-col bg-white">
                         <div className="flex items-start gap-4 mb-5">
@@ -254,6 +295,13 @@ export function TestimonialCarousel() {
               />
             ))}
           </div>
+
+          {/* Pause Indicator */}
+          {isAutoplayPaused && (
+            <div className="absolute top-4 right-4 z-30 bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-medium shadow-lg">
+              
+            </div>
+          )}
         </div>
       </div>
     </section>
