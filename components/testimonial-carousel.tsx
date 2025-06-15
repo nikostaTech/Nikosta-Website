@@ -32,7 +32,7 @@ const testimonials: TestimonialProps[] = [
   {
     image: "/aakash.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     testimonial:
-      "The custom software solution developed by Nikosta has streamlined our operations and increased productivity by 35%. Their team was professional and responsive throughout the project.",
+      "They built a stunning, responsive website for me, boosting local visibility, customer engagement, and footfall with an elegant menu showcase and seamless reservation experience.",
     name: "Aakash Trivedi",
     role: "Director",
     company: "Tradeneeti",
@@ -48,7 +48,7 @@ const testimonials: TestimonialProps[] = [
   {
     image: "/ranidi.JPG?auto=compress&cs=tinysrgb&dpr=1&w=500",
     testimonial:
-      "Nikosta's cybersecurity team identified and resolved critical vulnerabilities in our infrastructure. Their proactive approach to security has given us peace of mind in an increasingly complex threat landscape.",
+      "Nikosta built an exceptional website for Taxall—smart, efficient, and user-friendly. Their AI expertise, timely delivery, and professional support truly exceeded expectations. Highly recommended partner!",
     name: "Priyanka Rani",
     role: "CTO",
     company: "Taxall",
@@ -56,7 +56,7 @@ const testimonials: TestimonialProps[] = [
   {
     image: "/badema.png?auto=compress&cs=tinysrgb&dpr=1&w=500",
     testimonial:
-      "Nikosta ne hamare legacy systems ko modern, scalable architecture mein transform kar diya. Unki expertise se hame significant cost savings aur performance improvement mili.",
+      "They transformed Tradeneeti with a robust digital platform offering live updates, expert-led courses, and demo trading tools—greatly boosting engagement, learning outcomes, and trader confidence.",
     name: "Gaurav Kumar",
     role: "Manager",
     company: "Manglam Events ",
