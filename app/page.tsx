@@ -207,14 +207,20 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Updated arrow with onClick handler */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
+          {/* Updated arrow with onClick handler - Bottom Position */}
+          <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-5 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-20">
             <button
               onClick={scrollToExpertise}
-              className="animate-bounce p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-600 cursor-pointer"
+              className="animate-bounce p-3 sm:p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-600 cursor-pointer touch-manipulation"
               aria-label="Scroll to expertise section"
             >
-              <svg className="w-6 h-6 text-white" fill="none" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              <svg
+                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                fill="none"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
               </svg>
             </button>
