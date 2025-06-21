@@ -7,12 +7,7 @@ import { PremiumBackButton } from "@/components/premium-back-button"
 
 export default function AboutPage() {
   const team = [
-    {
-      name: "Ashish Raj",
-      position: "Software Developer",
-      bio: "Ashish is a dedicated Software Developer committed to building innovative and efficient software solutions.",
-      image: "/ashish cy.png?height=400&width=400&text=John",
-    },
+   
     {
       name: "Aman Kumar Karan",
       position: "Devops Engineer",
