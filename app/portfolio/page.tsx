@@ -61,21 +61,21 @@ export default function PortfolioPage() {
       status: "completed",
     },
     
-    {
-      id: 5,
-      title: "Skin Cancer Classification",
-      category: "Medical",
-      description:
-        "Developed a machine learning-based system to assist hospitals in early detection using medical image analysis.",
-      image: "/cancerdet copy.png",
-      websiteUrl: "",
-      status: "completed",
-    },
+    // {
+    //   id: 5,
+    //   title: "Skin Cancer Classification",
+    //   category: "Medical",
+    //   description:
+    //     "Developed a machine learning-based system to assist hospitals in early detection using medical image analysis.",
+    //   image: "/cancerdet copy.png",
+    //   websiteUrl: "",
+    //   status: "completed",
+    // },
     
     {
       id: 7,
-      title: "MS Video",
-      category: "Photography & Videography",
+      title: "MS Video (In Devlopement Phase)",
+      category: "Photography & Videography ",
       description:
         "🚧 Currently in Development - A cutting-edge portfolio platform for professional photographers and videographers featuring advanced galleries, video streaming, and client management systems.",
       image: "/ms01.png?height=400&width=600&text=MS+Video+Portfolio+%28In+Development%29",
@@ -84,7 +84,7 @@ export default function PortfolioPage() {
     },
     {
       id: 8,
-      title: "Manglam Event",
+      title: "Manglam Event (In Devlopement Phase) ",
       category: "Event Management",
       description:
         "🚧 Currently in Development - A premium wedding and event planning platform with over 8 years of experience, creating magical celebrations and transforming dreams into reality with meticulous planning and flawless execution.",
