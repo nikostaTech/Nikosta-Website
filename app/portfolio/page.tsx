@@ -20,23 +20,13 @@ export default function PortfolioPage() {
       status: "completed",
     },
     {
-      id: 2,
-      title: "Tradeneeti",
-      category: "Financial Services Institute",
+      id: 6,
+      title: "SPEAKING WARRIOR",
+      category: "Coaching & Training",
       description:
-        "A Financial Services Institute offering expert solutions in Stock market, investment, and compliance through smart technology, personalized advice, and secure platforms.",
-      image: "/tradeneeti.png",
-      websiteUrl: "https://tradeneeti.com",
-      status: "completed",
-    },
-    {
-      id: 3,
-      title: "Chilli Restaurant",
-      category: "Restaurant website",
-      description:
-        "A cozy restaurant serving delicious, freshly prepared meals with warm hospitality, vibrant ambiance, and a menu inspired by global flavors.",
-      image: "/chilli.png",
-      websiteUrl: "",
+        "A comprehensive platform dedicated to cultivating confident public speakers and storytellers through expert coaching, online courses, and personalized training programs.",
+      image: "/speaking.png",
+      websiteUrl: "https://speakingwarrior.in/",
       status: "completed",
     },
     {
@@ -50,6 +40,28 @@ export default function PortfolioPage() {
       status: "completed",
     },
     {
+      id: 2,
+      title: "Tradeneeti",
+      category: "Financial Services Institute",
+      description:
+        "A Financial Services Institute offering expert solutions in Stock market, investment, and compliance through smart technology, personalized advice, and secure platforms.",
+      image: "/tradeneeti.png",
+      websiteUrl: "https://tradeneeti.com",
+      status: "completed",
+    },
+    
+    {
+      id: 3,
+      title: "Chilli Restaurant",
+      category: "Restaurant website",
+      description:
+        "A cozy restaurant serving delicious, freshly prepared meals with warm hospitality, vibrant ambiance, and a menu inspired by global flavors.",
+      image: "/chilli.png",
+      websiteUrl: "",
+      status: "completed",
+    },
+    
+    {
       id: 5,
       title: "Skin Cancer Classification",
       category: "Medical",
@@ -59,16 +71,7 @@ export default function PortfolioPage() {
       websiteUrl: "",
       status: "completed",
     },
-    {
-      id: 6,
-      title: "SPEAKING WARRIOR",
-      category: "Coaching & Training",
-      description:
-        "A comprehensive platform dedicated to cultivating confident public speakers and storytellers through expert coaching, online courses, and personalized training programs.",
-      image: "/speaking.png",
-      websiteUrl: "https://speakingwarrior.in/",
-      status: "completed",
-    },
+    
     {
       id: 7,
       title: "MS Video",
