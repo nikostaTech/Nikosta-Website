@@ -54,6 +54,15 @@ export default function PortfolioPage() {
       image: "/cancerdet copy.png",
       websiteUrl: "",
     },
+    {
+      id: 6,
+      title: "SPEAKING WARRIOR",
+      category: "Coaching & Training",
+      description:
+        "A comprehensive platform dedicated to cultivating confident public speakers and storytellers through expert coaching, online courses, and personalized training programs.",
+      image: "/speaking.png",
+      websiteUrl: "https://speakingwarrior.in/",
+    },
   ]
 
   return (

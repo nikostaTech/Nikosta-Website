@@ -99,6 +99,24 @@ const projects = [
     technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "Streamlit"],
     images: ["/cancerdet.png", "/cancer2.png", "/cancer3.png"],
   },
+  {
+    id: "6",
+    title: "Speaking Warrior - Public Speaking Academy",
+    category: "Education / Coaching",
+    client: "Aspiring Public Speakers & Professionals",
+    year: "2025",
+    websiteUrl: "https://speakingwarrior.in/",
+    description:
+      "Speaking Warrior is a premier public speaking and communication training platform dedicated to empowering individuals with confidence and clarity in their voice.",
+    challenge:
+      "Many professionals and students struggle with public speaking anxiety, lack of confidence, and ineffective communication skills, limiting their personal and career growth.",
+    solution:
+      "We developed a comprehensive digital platform offering structured courses, personalized coaching sessions, batch training programs, and interactive learning modules to build speaking confidence.",
+    results:
+      "Successfully launched a platform that has helped hundreds of individuals overcome speaking fears, improve communication skills, and achieve their personal and professional goals.",
+    technologies: ["React.js", "Next.js", "Node.js", "MongoDB", "Video Streaming", "Payment Gateway"],
+    images: ["/speaking.png", "/spea1.png", "/spea2.png"],
+  },
 ]
 
 export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
