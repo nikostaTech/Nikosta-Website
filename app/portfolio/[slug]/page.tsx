@@ -34,7 +34,7 @@ const projects = [
     category: "Finance / Education",
     client: "Aspiring Traders & Investors",
     year: "2024",
-    websiteUrl: "https://tradeneeti.com/",
+    websiteUrl: "https://www.tradeneetiacademy.com/",
     status: "completed",
     description:
       "Tradeneeti is a financial stock market institute offering expert-led courses, real-time trading insights, and practical training.",
@@ -45,7 +45,7 @@ const projects = [
     results:
       "Increased student engagement, enhanced trading knowledge, and improved confidence among learners entering the financial markets.",
     technologies: ["React.js", "Next.js", "Node.js", "MongoDB", "Trading APIs"],
-    images: ["/tradeneeti.png", "/trade.png", "/trade2.png"],
+    images: ["/tn1.png", "/tn1.png", "/tn1.png"],
   },
   {
     id: "3",

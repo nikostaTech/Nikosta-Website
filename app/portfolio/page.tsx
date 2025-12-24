@@ -45,8 +45,8 @@ export default function PortfolioPage() {
       category: "Financial Services Institute",
       description:
         "A Financial Services Institute offering expert solutions in Stock market, investment, and compliance through smart technology, personalized advice, and secure platforms.",
-      image: "/tradeneeti.png",
-      websiteUrl: "https://tradeneeti.com",
+      image: "/tn1.png",
+      websiteUrl: "https://www.tradeneetiacademy.com/",
       status: "completed",
     },
     
