@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
+import Script from "next/script"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -216,6 +217,17 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body className={`${inter.className} min-h-screen bg-white font-sans antialiased`}>
+        {/* Google Analytics gtag.js scripts */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PDRBMYWTYL" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PDRBMYWTYL');
+          `}
+        </Script>
+
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
