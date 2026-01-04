@@ -16,6 +16,7 @@ import {
   Cloud,
   Database,
   Shield,
+  Smartphone,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -85,22 +86,32 @@ export default function Home() {
   const expertiseItems = [
     {
       icon: Code,
-      title: "Software Development",
-      description: "Custom software solutions tailored to your business needs.",
-      features: ["Web Applications", "Mobile Apps", "API Development", "Legacy Modernization"],
+      title: "Web Development",
+      description: "Custom web applications and responsive websites for your business.",
+      features: ["Responsive Design", "E-commerce", "CMS Solutions", "Progressive Web Apps"],
       color: "from-blue-500 to-indigo-600",
       iconColor: "text-blue-500",
       bgGradient: "from-blue-500/10 to-indigo-600/5",
-      link: "/services#software-development",
+      link: "/services#web-development",
+    },
+    {
+      icon: Smartphone,
+      title: "App Development",
+      description: "Native and cross-platform mobile applications for iOS and Android.",
+      features: ["iOS & Android", "Cross-Platform", "UI/UX Design", "App Maintenance"],
+      color: "from-cyan-500 to-blue-600",
+      iconColor: "text-cyan-500",
+      bgGradient: "from-cyan-500/10 to-blue-600/5",
+      link: "/services#app-development",
     },
     {
       icon: Cloud,
       title: "Cloud Solutions",
       description: "Scalable cloud infrastructure and migration services.",
       features: ["AWS & Azure", "Cloud Migration", "Serverless", "DevOps"],
-      color: "from-cyan-500 to-blue-600",
-      iconColor: "text-cyan-500",
-      bgGradient: "from-cyan-500/10 to-blue-600/5",
+      color: "from-purple-500 to-indigo-600",
+      iconColor: "text-purple-500",
+      bgGradient: "from-purple-500/10 to-indigo-600/5",
       link: "/services#cloud-solutions",
     },
     {
@@ -108,20 +119,10 @@ export default function Home() {
       title: "Data Analytics",
       description: "Transform your data into actionable business insights.",
       features: ["Big Data", "BI Solutions", "Predictive Analytics", "Data Visualization"],
-      color: "from-purple-500 to-indigo-600",
-      iconColor: "text-purple-500",
-      bgGradient: "from-purple-500/10 to-indigo-600/5",
-      link: "/services#data-analytics",
-    },
-    {
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Protect your business with advanced security solutions.",
-      features: ["Threat Detection", "Compliance", "Security Audits", "Incident Response"],
       color: "from-red-500 to-pink-600",
       iconColor: "text-red-500",
       bgGradient: "from-red-500/10 to-pink-600/5",
-      link: "/services#cybersecurity",
+      link: "/services#data-analytics",
     },
   ]
 
@@ -170,7 +171,7 @@ export default function Home() {
                 </h1>
                 <span className="typing-text-container  text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl">
                   <TypingEffect
-                    texts={["Advanced Technology", "Digital Innovation", "Cloud Solutions", "AI Integration"]}
+                    texts={["Web Development", "App Development", "Cloud Solutions", "Digital Innovation"]}
                     typingSpeed={80}
                     deletingSpeed={40}
                     delayBetweenTexts={2000}
@@ -178,8 +179,8 @@ export default function Home() {
                   />
                 </span>
                 <p className="max-w-[600px] text-gray-400 md:text-xl">
-                  Nikosta delivers cutting-edge technology services that drive innovation, efficiency, and growth for
-                  enterprises worldwide.
+                  Nikosta specializes in web development and app development services, delivering cutting-edge solutions
+                  that drive innovation and growth for businesses worldwide.
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:gap-6 sm:justify-start">
@@ -504,7 +505,7 @@ export default function Home() {
         <div className="container relative z-10 px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl">
                 Ready to <AnimatedGradientText text="Transform Your Business" />?
               </h2>
               <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl/relaxed">
