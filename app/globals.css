@@ -84,7 +84,6 @@
   perspective: 800px;
 }
 
-
 .rotate-y-90 {
   transform: rotateY(90deg);
 }
@@ -218,7 +217,7 @@
 }
 
 /* Fix for 3D transforms */
-.perspective-[800px] {
+.perspective-800 {
   perspective: 800px;
 }
 
@@ -237,7 +236,7 @@
     -webkit-transform-style: preserve-3d;
   }
 
-  .perspective-[800px] {
+  .perspective-800 {
     -webkit-perspective: 800px;
   }
 }
@@ -283,4 +282,3 @@
 .animate-float-slow {
   animation: float-slow 8s ease-in-out infinite;
 }
-
