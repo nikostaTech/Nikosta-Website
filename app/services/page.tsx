@@ -7,60 +7,60 @@ import { PremiumBackButton } from "@/components/premium-back-button"
 export default function ServicesPage() {
   const services = [
     {
+      id: "web-development",
+      title: "Web Development",
+      description: "Build powerful, scalable websites and web applications that drive business growth.",
+      features: [
+        "Custom website development",
+        "E-commerce solutions",
+        "Progressive Web Apps (PWA)",
+        "CMS integration & customization",
+        "Responsive & mobile-first design",
+        "API development & integration",
+      ],
+      image: "/soft.jpg?height=600&width=600&text=Web+Development",
+    },
+    {
+      id: "app-development",
+      title: "App Development",
+      description: "Create intuitive mobile applications that engage users and deliver exceptional experiences.",
+      features: [
+        "iOS & Android app development",
+        "Cross-platform solutions",
+        "Native app development",
+        "App UI/UX design",
+        "App maintenance & support",
+        "App store optimization",
+      ],
+      image: "/cloud.jpg?height=600&width=600&text=App+Development",
+    },
+    {
       id: "software-development",
-      title: "Software Development",
-      description: "Custom software solutions tailored to your business needs.",
+      title: "Custom Software Solutions",
+      description: "Tailored software solutions designed to solve your unique business challenges.",
       features: [
-        "Custom application development",
-        "Web and mobile applications",
-        "API development and integration",
+        "Enterprise software development",
+        "SaaS application development",
         "Legacy system modernization",
-        "DevOps and CI/CD implementation",
+        "DevOps & CI/CD implementation",
         "Microservices architecture",
+        "Cloud-native applications",
       ],
-      image: "/soft.jpg?height=600&width=600&text=Software+Development",
+      image: "/dataanalytics.jpg?height=600&width=600&text=Software+Development",
     },
     {
-      id: "cloud-solutions",
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and migration services.",
+      id: "digital-solutions",
+      title: "Digital Solutions",
+      description: "Comprehensive digital services to elevate your online presence and business operations.",
       features: [
-        "Cloud migration strategy",
-        "Infrastructure as Code (IaC)",
-        "Multi-cloud management",
-        "Serverless architecture",
-        "Cloud cost optimization",
-        "Managed cloud services",
+        "Cloud migration & management",
+        "Data analytics & insights",
+        "Cybersecurity solutions",
+        "Digital transformation consulting",
+        "Performance optimization",
+        "24/7 technical support",
       ],
-      image: "/cloud.jpg?height=600&width=600&text=Cloud+Solutions",
-    },
-    {
-      id: "data-analytics",
-      title: "Data Analytics",
-      description: "Transform your data into actionable business insights.",
-      features: [
-        "Business intelligence solutions",
-        "Data warehouse implementation",
-        "Big data processing",
-        "Predictive analytics",
-        "Machine learning integration",
-        "Real-time analytics dashboards",
-      ],
-      image: "/dataanalytics.jpg?height=600&width=600&text=Data+Analytics",
-    },
-    {
-      id: "cybersecurity",
-      title: "Cybersecurity",
-      description: "Protect your business with advanced security solutions.",
-      features: [
-        "Security assessment and auditing",
-        "Threat detection and prevention",
-        "Identity and access management",
-        "Compliance management",
-        "Security operations center",
-        "Incident response planning",
-      ],
-      image: "/cyber.jpg?height=600&width=600&text=Cybersecurity",
+      image: "/cyber.jpg?height=600&width=600&text=Digital+Solutions",
     },
   ]
 
@@ -74,9 +74,10 @@ export default function ServicesPage() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Tech Expertise</h1>
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Web & App Development Services</h1>
               <p className="max-w-[700px] text-gray-400 md:text-xl/relaxed">
-                We offer comprehensive technology solutions to help your business thrive in the digital era.
+                Professional web development and app development solutions that transform your ideas into powerful
+                digital products. We build websites and applications that drive results.
               </p>
             </div>
           </div>
@@ -110,7 +111,7 @@ export default function ServicesPage() {
                   <div className="inline-flex items-center space-x-2 rounded-lg bg-gray-100 px-3 py-1">
                     <div className="h-5 w-5">
                       {/* Static SVG icons based on service type */}
-                      {service.id === "software-development" && (
+                      {service.id === "web-development" && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -126,7 +127,7 @@ export default function ServicesPage() {
                           <polyline points="8 6 2 12 8 18"></polyline>
                         </svg>
                       )}
-                      {service.id === "cloud-solutions" && (
+                      {service.id === "app-development" && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -141,7 +142,7 @@ export default function ServicesPage() {
                           <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
                         </svg>
                       )}
-                      {service.id === "data-analytics" && (
+                      {service.id === "software-development" && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"
@@ -158,7 +159,7 @@ export default function ServicesPage() {
                           <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
                         </svg>
                       )}
-                      {service.id === "cybersecurity" && (
+                      {service.id === "digital-solutions" && (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="20"

@@ -164,39 +164,54 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-8">
               <div className="space-y-6">
                 <Badge variant="premium" className="px-3 py-1 text-sm">
-                  Next-Generation Technology Solutions
+                  Expert Web & App Development Services
                 </Badge>
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl  text-white">
-                  Transforming Business Through{" "}
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl text-white leading-tight text-balance">
+                  Build Your Next Digital Product With{" "}
                 </h1>
-                <span className="typing-text-container  text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl">
+                <span className="typing-text-container text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl xl:text-7xl">
                   <TypingEffect
-                    texts={["Web Development", "App Development", "Cloud Solutions", "Digital Innovation"]}
+                    texts={["Expert Developers", "Modern Technology", "Proven Results", "Trusted Partners"]}
                     typingSpeed={80}
                     deletingSpeed={40}
                     delayBetweenTexts={2000}
                     className="text-gradient"
                   />
                 </span>
-                <p className="max-w-[600px] text-gray-400 md:text-xl">
-                  Nikosta specializes in web development and app development services, delivering cutting-edge solutions
-                  that drive innovation and growth for businesses worldwide.
+                <p className="max-w-[600px] text-gray-300 text-lg md:text-xl leading-relaxed text-pretty">
+                  Transform your business with custom web development and mobile app solutions. We deliver scalable,
+                  high-performance applications that drive growth and exceed expectations.
                 </p>
+                {/* Trust indicators below hero text */}
+                <div className="flex flex-wrap items-center gap-6 pt-4">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <span className="text-sm text-gray-300">5+ Projects Delivered</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <span className="text-sm text-gray-300">100% Client Satisfaction</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
+                    <span className="text-sm text-gray-300">On-Time Delivery</span>
+                  </div>
+                </div>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:gap-6 sm:justify-start">
-                <Link href="/services" className="w-full sm:w-auto">
-                  <GlowingButton className="w-full sm:w-auto px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg">
-                    Explore Solutions
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <GlowingButton className="w-full sm:w-auto px-8 py-6 text-lg font-semibold">
+                    Start Your Project
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </GlowingButton>
                 </Link>
-                <Link href="/contact" className="w-full sm:w-auto">
+                <Link href="/portfolio" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
-                    className="w-full sm:w-auto border-gray-700 bg-transparent text-white hover:bg-gray-800 hover:text-white px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg"
+                    className="w-full sm:w-auto border-gray-700 bg-transparent text-white hover:bg-white hover:text-black px-8 py-6 text-lg font-semibold transition-all duration-300"
                   >
-                    Contact Us
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    View Our Work
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
               </div>
@@ -242,16 +257,16 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_70%)]"></div>
         </div>
 
-        <div className="container relative z-10 px-4 py-24 bg-gray-100 md:px-6">
+        <div className="container relative z-10 px-4 py-24 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
             <Badge variant="premium" className="px-3 py-1 text-sm mb-4">
-              Our Solutions
+              Our Core Services
             </Badge>
-            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4">
-              Technology <AnimatedGradientText text="Expertise" />
+            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-4 text-balance">
+              Services That Drive <AnimatedGradientText text="Business Growth" />
             </h2>
-            <p className="max-w-[800px] text-gray-600 md:text-xl/relaxed lg:text-xl/relaxed">
-              We provide comprehensive technology solutions to help your business thrive in the digital era.
+            <p className="max-w-[800px] text-gray-600 md:text-xl/relaxed lg:text-xl/relaxed text-pretty">
+              From concept to launch, we build digital products that your customers love and your business needs.
             </p>
           </div>
 
@@ -276,7 +291,7 @@ export default function Home() {
             <Link href="/services">
               <Button className="group relative overflow-hidden rounded-full bg-black px-8 py-6 text-lg text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/20">
                 <span className="relative z-10 flex items-center">
-                  View All Solutions
+                  Explore All Services
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
                 <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
@@ -294,13 +309,13 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <Badge variant="glow" className="px-3 py-1 text-sm">
-                Why Choose Us
+                Why Partner With Us
               </Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our <AnimatedGradientText text="Approach" />
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">
+                The <AnimatedGradientText text="Nikosta Advantage" />
               </h2>
-              <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                What sets us apart from other technology providers.
+              <p className="max-w-[900px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-pretty">
+                Experience the difference of working with a dedicated development team that cares about your success.
               </p>
             </div>
           </div>
@@ -309,9 +324,10 @@ export default function Home() {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
                 <Zap className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">On Time Delivery</h3>
+              <h3 className="mt-4 text-xl font-bold text-white">Lightning-Fast Delivery</h3>
               <p className="mt-2 text-gray-400">
-                We employ agile development practices to deliver solutions quickly and efficiently.
+                Get to market faster with our agile development process. We deliver working software every sprint,
+                ensuring you see progress consistently.
               </p>
             </AnimatedCard>
 
@@ -319,9 +335,10 @@ export default function Home() {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
                 <LineChart className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">Scalable Solutions</h3>
+              <h3 className="mt-4 text-xl font-bold text-white">Built to Scale</h3>
               <p className="mt-2 text-gray-400">
-                Our solutions are designed to grow with your business needs and objectives.
+                Your app grows with your business. Our scalable architecture handles increasing users and features
+                without breaking a sweat.
               </p>
             </AnimatedCard>
 
@@ -329,36 +346,40 @@ export default function Home() {
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
                 <CheckCircle className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">Quality Assurance</h3>
+              <h3 className="mt-4 text-xl font-bold text-white">Zero Compromise Quality</h3>
               <p className="mt-2 text-gray-400">
-                Rigorous testing and quality control processes ensure reliable, high-performance solutions.
-              </p>
-            </AnimatedCard>
-            <AnimatedCard glowOnHover tiltEffect>
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
-                <Globe className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 text-xl font-bold text-white">Global Expertise</h3>
-              <p className="mt-2 text-gray-400">
-                Our international team brings diverse perspectives and expertise from around the world.
+                Every line of code is tested, reviewed, and optimized. We don't ship bugs—we ship exceptional user
+                experiences.
               </p>
             </AnimatedCard>
             <AnimatedCard glowOnHover tiltEffect>
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
                 <Users className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">Client-Centric Approach</h3>
+              <h3 className="mt-4 text-xl font-bold text-white">Dedicated Partnership</h3>
               <p className="mt-2 text-gray-400">
-                We prioritize your business goals and tailor our solutions to meet your specific needs.
+                We're not just developers—we're your technology partners. Your success is our mission, and we're with
+                you every step of the way.
+              </p>
+            </AnimatedCard>
+            <AnimatedCard glowOnHover tiltEffect>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
+                <Globe className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-xl font-bold text-white">Global Standards</h3>
+              <p className="mt-2 text-gray-400">
+                Work with a team that follows international best practices. We bring world-class expertise to every
+                project, no matter the size.
               </p>
             </AnimatedCard>
             <AnimatedCard glowOnHover tiltEffect>
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-500/20 text-primary-500">
                 <Shield className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">Security First</h3>
+              <h3 className="mt-4 text-xl font-bold text-white">Bank-Level Security</h3>
               <p className="mt-2 text-gray-400">
-                We implement robust security measures in all our solutions to protect your valuable data.
+                Sleep soundly knowing your data is protected. We implement industry-leading security practices in every
+                application we build.
               </p>
             </AnimatedCard>
           </div>
@@ -368,6 +389,14 @@ export default function Home() {
       {/* Stats Section */}
       <section className="w-full py-20 bg-gradient-to-br from-black to-gray-900 text-white">
         <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <Badge variant="glow" className="px-3 py-1 text-sm">
+              Proven Track Record
+            </Badge>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">
+              Results That <AnimatedGradientText text="Speak Volumes" />
+            </h2>
+          </div>
           <div className="grid gap-8 md:grid-cols-3">
             <AnimatedCard glowOnHover tiltEffect>
               <div className="flex flex-col items-center justify-center space-y-4">
@@ -376,7 +405,8 @@ export default function Home() {
                   <h3 className="text-4xl font-bold text-white">
                     <AnimatedCounter value={5} suffix="+" />
                   </h3>
-                  <p className="text-white">Clients Worldwide</p>
+                  <p className="text-white font-medium">Happy Clients</p>
+                  <p className="text-gray-400 text-sm mt-1">Businesses trust us worldwide</p>
                 </div>
               </div>
             </AnimatedCard>
@@ -388,7 +418,8 @@ export default function Home() {
                   <h3 className="text-4xl font-bold text-white">
                     <AnimatedCounter value={5} suffix="+" />
                   </h3>
-                  <p className="text-white">Projects Completed</p>
+                  <p className="text-white font-medium">Successful Projects</p>
+                  <p className="text-gray-400 text-sm mt-1">Delivered on time & on budget</p>
                 </div>
               </div>
             </AnimatedCard>
@@ -400,7 +431,8 @@ export default function Home() {
                   <h3 className="text-4xl font-bold text-white">
                     <AnimatedCounter value={2} suffix="+" />
                   </h3>
-                  <p className="text-white">Countries Served</p>
+                  <p className="text-white font-medium">Global Reach</p>
+                  <p className="text-gray-400 text-sm mt-1">Serving clients internationally</p>
                 </div>
               </div>
             </AnimatedCard>
@@ -434,15 +466,14 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <Badge variant="premium" className="px-3 py-1 text-sm">
-                Our Products
+                Our Work
               </Badge>
-
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Success <AnimatedGradientText text="Stories" />
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">
+                Real Projects, <AnimatedGradientText text="Real Results" />
               </h2>
 
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                See how we've helped organizations achieve their technology goals.
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-pretty">
+                See how we've transformed businesses with cutting-edge web and mobile solutions.
               </p>
             </div>
           </div>
@@ -500,25 +531,49 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-20 bg-black text-white">
-        <AnimatedBackground className="opacity-20" />
+      <section className="w-full py-24 md:py-32 bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,112,243,0.1),transparent_70%)]"></div>
         <div className="container relative z-10 px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-6xl">
-                Ready to <AnimatedGradientText text="Transform Your Business" />?
-              </h2>
-              <p className="mx-auto max-w-[700px] text-gray-400 md:text-xl/relaxed">
-                Let's work together to create innovative technology solutions that drive your business forward.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 min-[400px]:flex-row pt-6">
+          <div className="flex flex-col items-center justify-center space-y-8 text-center max-w-4xl mx-auto">
+            <Badge variant="glow" className="px-4 py-2 text-sm">
+              Ready to Get Started?
+            </Badge>
+            <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-balance">
+              Let's Build Something <AnimatedGradientText text="Amazing Together" />
+            </h2>
+            <p className="max-w-[700px] text-gray-300 md:text-xl/relaxed text-pretty">
+              Whether you need a modern website, mobile app, or complete digital transformation—we're here to make it
+              happen. Get in touch today for a free consultation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/contact">
-                <GlowingButton className="px-8 py-6 text-lg">
-                  Get in Touch
+                <GlowingButton className="px-10 py-7 text-lg font-semibold">
+                  Schedule Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </GlowingButton>
               </Link>
+              <Link href="/portfolio">
+                <Button
+                  variant="outline"
+                  className="border-gray-700 bg-transparent text-white hover:bg-white hover:text-black px-10 py-7 text-lg font-semibold transition-all duration-300"
+                >
+                  Explore Our Portfolio
+                </Button>
+              </Link>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-8 pt-8 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-400" />
+                <span>No Hidden Fees</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-400" />
+                <span>Free Project Estimate</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="h-4 w-4 text-green-400" />
+                <span>Quick Response Time</span>
+              </div>
             </div>
           </div>
         </div>
