@@ -366,8 +366,27 @@ export default function RootLayout({
 
         {/* Preload critical resources */}
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+
+        <Script id="gtm-head" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TB83RNGW');
+          `}
+        </Script>
       </head>
       <body className={`${inter.className} min-h-screen bg-white font-sans antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TB83RNGW"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         {/* Google Analytics gtag.js scripts */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-PDRBMYWTYL" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
