@@ -376,6 +376,13 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-TB83RNGW');
           `}
         </Script>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7021621721247184"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`${inter.className} min-h-screen bg-white font-sans antialiased`}>
         <noscript>
